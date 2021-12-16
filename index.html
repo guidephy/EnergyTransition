@@ -15,7 +15,7 @@
 -webkit-appearance: none;
 
 }
-  </style>>
+  </style>
  </head>
 
 
@@ -37,7 +37,13 @@
 		<td  >年總發電量</td><td >年收入</td><td >每年碳排量</td>
 	</tr>
 	<tr align="center" valign="middle" >
+		<td  ><p id="totalPower">0</p></td><td ><p id="annualIncome">0</p></td><td ><p id="annualcarbonEmission">0</p></td>
+	</tr>
+	<tr align="center" valign="middle" >
 		<td  >剩餘可用電量</td><td >財力</td><td >累積碳排量</td>
+	</tr>
+	<tr align="center" valign="middle" >
+		<td  ><p id="powerUseful">0</p></td><td ><p id="totalMoney">100</p></td><td ><p id="totalcarbonEmission">0</p></td>
 	</tr>
 	</table>
 
@@ -61,7 +67,7 @@
 	</div>
 
     <div>
-    	<input type="button" value="下一年"  style=" text-align:center; background-color:#FFFF6F;">
+    	<input type="button" value="下一年"   onClick="next()" style=" text-align:center; background-color:#FFFF6F;">
     </div>
 
     <div>
@@ -83,11 +89,42 @@
 
  <script>
 
-var username=document.getElementById("usernameId").value;;
+var username=document.getElementById("usernameId").value;
 var year=1;
 
+var totalPower;
+var annualIncome;
+var annualcarbonEmission;
+var powerUseful;
+var totalMoney;
+var totalcarbonEmission;
+
 function abc(){
-	alert("測試中");
+	totalPower=totalPower+0;
+	annualIncome=annualIncome+30;
+	annualcarbonEmission=annualcarbonEmission+1;
+    powerUseful=powerUseful+0;
+    totalMoney=totalMoney-100;
+
+	document.getElementById("totalPower").value=totalPower;
+	document.getElementById("annualIncome").value=annualIncome;
+	document.getElementById("annualcarbonEmission").value=annualcarbonEmission;
+	document.getElementById("powerUseful").value=powerUseful;
+	document.getElementById("totalMoney").value=totalMoney;
+
+	
+}
+
+
+function next(){
+
+	totalMoney=totalMoney+annualIncome;
+
+    totalcarbonEmission=totalcarbonEmission+annualcarbonEmission;
+
+    document.getElementById("totalMoney").value=totalMoney;
+    document.getElementById("totalcarbonEmission").value=totalcarbonEmission;
+
 }
 
 function send(){
