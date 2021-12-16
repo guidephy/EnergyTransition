@@ -31,7 +31,6 @@
 	 <div id="playBoard" align="center" style='visibility:hidden'>
      <h2 align="center" id="year" style="color:blue;"></h2>
 
-
 	<table  width="100%" style="table-layout:fixed">
 	<tr align="center" valign="middle" >
 		<td  >年總發電量</td><td  ><p id="totalPower">0</p></td><td >年收入</td><td ><p id="annualIncome">0</p></td><td >每年碳排量</td><td ><p id="annualcarbonEmission">0</p></td>
@@ -58,10 +57,10 @@
 	
 
 
-  		<input  type="image"  name="png1"  id="png1"  img  src="1.png"  onClick="abc()" data-inline="true"style="width:23%">
-  		<input  type="image"  name="png2"  id="png2"  img  src="2.png"  data-inline="true"style="width:23%">
-  		<input  type="image"  name="png3"  id="png3"  img  src="3.png"  data-inline="true"style="width:23%">
-  		<input  type="image"  name="png4"  id="png4"  img  src="4.png"  data-inline="true"style="width:23%">
+  		<input  type="image"  name="png1"  id="png1"  img  src="1.png"  onClick="png1()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png2"  id="png2"  img  src="2.png"  onClick="png2()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png3"  id="png3"  img  src="3.png"  onClick="png3()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png4"  id="png4"  img  src="4.png"  onClick="png4()" data-inline="true"style="width:23%">
 		
 
 	</div>
@@ -80,25 +79,90 @@
 var username=document.getElementById("usernameId").value;
 var year=1;
 
-var totalPower;
-var annualIncome;
-var annualcarbonEmission;
-var powerUseful;
-var totalMoney;
-var totalcarbonEmission;
+var totalPower=0;
+var annualIncome=0;
+var annualcarbonEmission=0;
+var powerUseful=0;
+var totalMoney=100;
+var totalcarbonEmission=0;
 
-function abc(){
+function png1(){
+
+	if(totalMoney>=50){
 	totalPower=totalPower+0;
-	annualIncome=annualIncome+30;
+	annualIncome=annualIncome+10;
 	annualcarbonEmission=annualcarbonEmission+1;
+    powerUseful=powerUseful+0;
+    totalMoney=totalMoney-50;
+
+	document.getElementById("totalPower").innerHTML=totalPower;
+	document.getElementById("annualIncome").innerHTML=annualIncome;
+	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission;
+	document.getElementById("powerUseful").innerHTML=powerUseful;
+	document.getElementById("totalMoney").innerHTML=totalMoney;
+    }else{
+    	alert("目前財力無法購買");
+    }
+
+	
+}
+
+function png2(){
+	if(totalMoney>=100){
+	totalPower=totalPower+0;
+	annualIncome=annualIncome+25;
+	annualcarbonEmission=annualcarbonEmission+5;
     powerUseful=powerUseful+0;
     totalMoney=totalMoney-100;
 
-	document.getElementById("totalPower").value=totalPower;
-	document.getElementById("annualIncome").value=annualIncome;
-	document.getElementById("annualcarbonEmission").value=annualcarbonEmission;
-	document.getElementById("powerUseful").value=powerUseful;
-	document.getElementById("totalMoney").value=totalMoney;
+	document.getElementById("totalPower").innerHTML=totalPower;
+	document.getElementById("annualIncome").innerHTML=annualIncome;
+	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission;
+	document.getElementById("powerUseful").innerHTML=powerUseful;
+	document.getElementById("totalMoney").innerHTML=totalMoney;
+	}else{
+    	alert("目前財力無法購買");
+    }
+
+	
+}
+
+function png3(){
+	if(totalMoney>=300){
+	totalPower=totalPower+0;
+	annualIncome=annualIncome+100;
+	annualcarbonEmission=annualcarbonEmission+20;
+    powerUseful=powerUseful+0;
+    totalMoney=totalMoney-300;
+
+	document.getElementById("totalPower").innerHTML=totalPower;
+	document.getElementById("annualIncome").innerHTML=annualIncome;
+	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission;
+	document.getElementById("powerUseful").innerHTML=powerUseful;
+	document.getElementById("totalMoney").innerHTML=totalMoney;
+	}else{
+    	alert("目前財力無法購買");
+    }
+
+	
+}
+
+function png4(){
+	if(totalMoney>=1000){
+	totalPower=totalPower+0;
+	annualIncome=annualIncome+400;
+	annualcarbonEmission=annualcarbonEmission+200;
+    powerUseful=powerUseful+0;
+    totalMoney=totalMoney-1000;
+
+	document.getElementById("totalPower").innerHTML=totalPower;
+	document.getElementById("annualIncome").innerHTML=annualIncome;
+	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission;
+	document.getElementById("powerUseful").innerHTML=powerUseful;
+	document.getElementById("totalMoney").innerHTML=totalMoney;
+	}else{
+    	alert("目前財力無法購買");
+    }
 
 	
 }
@@ -110,8 +174,11 @@ function next(){
 
     totalcarbonEmission=totalcarbonEmission+annualcarbonEmission;
 
-    document.getElementById("totalMoney").value=totalMoney;
-    document.getElementById("totalcarbonEmission").value=totalcarbonEmission;
+    document.getElementById("totalMoney").innerHTML=totalMoney;
+    document.getElementById("totalcarbonEmission").innerHTML=totalcarbonEmission;
+
+    year=year+1;
+    document.getElementById("year").innerHTML="第"+year+"年";   
 
 }
 
