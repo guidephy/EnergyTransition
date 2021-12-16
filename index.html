@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+
+    <script src=jquery-2.2.4.min.js></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>能源轉型遊戲</title>
+ </head>
+
+
+ <body>
+
+	 <div id="idCheck" align="center">
+	 <h2 align="center" style="color:blue;">能源轉型遊戲</h2>
+     <input type="text"   id="usernameId" placeholder="請輸入名字">
+     <button id="sendBtn" onclick="send()">送出</button>
+     </div>
+
+
+	 <div id="playBoard" align="center" style='visibility:hidden'>
+     <h2 align="center" id="year" style="color:blue;"></h2>
+
+
+	<table  width="100%" style="table-layout:fixed">
+	<tr align="center" valign="middle" >
+		<td  >年總發電量</td><td >年收入</td><td >每年碳排量</td>
+	</tr>
+	<tr align="center" valign="middle" >
+		<td  >剩餘可用電量</td><td >財力</td><td >累積碳排量</td>
+	</tr>
+	</table>
+
+	<h2></h2>
+	
+
+	<div id="option" align="center">
+		
+
+  		<input type="button" value="生產"  style="width:10%;height:40px;  solid;border-radius:10px;background-color:#FFAAD5;"data-inline="true">&nbsp&nbsp
+        <input type="button" value="能源"  style="width:10%;height:40px;  solid;border-radius:10px;background-color:#02F78E;"data-inline="true">&nbsp&nbsp
+        <input type="button" value="技術"  style="width:10%;height:40px;  solid;border-radius:10px;background-color:#4DFFFF;"data-inline="true">
+	</div>
+
+    <div>
+		<table  width="100%" style="table-layout:fixed">
+		<tr align="center" valign="middle" >
+		<td ><button type="button"><img src="1.png"></button></td>
+		<td ><button type="button"><img src="2.png"></button></td>
+		<td ><button type="button"><img src="3.png"></button></td>
+		<td ><button type="button"><img src="4.png"></button></td>
+		</tr>
+    	</table>
+    </div>
+
+    <div>
+    	<input type="button" value="下一年"  style="width:10%;height:40px;  solid;border-radius:10px;background-color:#FFFF6F;"data-inline="true">
+    </div>
+
+    <div>
+		<table  width="100%" >
+		<tr align="center" valign="middle" >
+		<td  width="20%">生產</td><td ></td>
+		</tr>
+		<tr align="center" valign="middle" >
+		<td   width="20%">能源</td><td ></td>
+		</tr>
+		<tr align="center" valign="middle" >
+		<td   width="20%">技術</td><td ></td>
+		</tr>
+    	</table>
+    </div>
+
+
+     </div>
+
+ <script>
+
+var username=document.getElementById("usernameId").value;;
+var year=1;
+
+
+function send(){
+
+	document.getElementById("idCheck").remove();
+
+    document.getElementById("playBoard").style.visibility='visible';  
+
+    document.getElementById("year").innerHTML="第"+year+"年";   
+
+
+
+
+}
+
+
+</script>
+
+ </body>
