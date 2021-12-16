@@ -34,55 +34,60 @@
 
 	<table  width="100%" style="table-layout:fixed">
 	<tr align="center" valign="middle" >
-		<td  >年總發電量</td><td >年收入</td><td >每年碳排量</td>
+		<td  >年總發電量</td><td  ><p id="totalPower">0</p></td><td >年收入</td><td ><p id="annualIncome">0</p></td><td >每年碳排量</td><td ><p id="annualcarbonEmission">0</p></td>
 	</tr>
+
 	<tr align="center" valign="middle" >
-		<td  ><p id="totalPower">0</p></td><td ><p id="annualIncome">0</p></td><td ><p id="annualcarbonEmission">0</p></td>
+		<td  >剩餘可用電量</td><td  ><p id="powerUseful">0</p></td><td >財力</td><td ><p id="totalMoney">100</p></td><td >累積碳排量</td><td ><p id="totalcarbonEmission">0</p></td>
 	</tr>
-	<tr align="center" valign="middle" >
-		<td  >剩餘可用電量</td><td >財力</td><td >累積碳排量</td>
-	</tr>
-	<tr align="center" valign="middle" >
-		<td  ><p id="powerUseful">0</p></td><td ><p id="totalMoney">100</p></td><td ><p id="totalcarbonEmission">0</p></td>
-	</tr>
+	
 	</table>
 
-	<h2></h2>
 	
 
 	<div id="option" align="center">
 		
 
-  		<input type="button" value="生產"  style="width:10%;height:40px;  text-align:center; background-color:#FFAAD5;"data-inline="true">&nbsp&nbsp
-        <input type="button" value="能源"  style="width:10%;height:40px;  text-align:center; background-color:#02F78E;"data-inline="true">&nbsp&nbsp
-        <input type="button" value="技術"  style="width:10%;height:40px;  text-align:center; background-color:#4DFFFF;"data-inline="true">
+  		<input type="button" value="生產"  style="width:10%;  text-align:center; background-color:#FFAAD5;"data-inline="true">&nbsp&nbsp
+        <input type="button" value="能源"  style="width:10%; text-align:center; background-color:#02F78E;"data-inline="true">&nbsp&nbsp
+        <input type="button" value="技術"  style="width:10%;  text-align:center; background-color:#4DFFFF;"data-inline="true">
 	</div>
 
-	<h2></h2>
-	<div>
-  		<input  type="image"  name="png1"  id="png1"  img  src="1.png"  onClick="abc()" data-inline="true"style="width:20%">
-  		<input  type="image"  name="png2"  id="png2"  img  src="2.png"  data-inline="true"style="width:20%">
-  		<input  type="image"  name="png3"  id="png3"  img  src="3.png"  data-inline="true"style="width:20%">
-  		<input  type="image"  name="png4"  id="png4"  img  src="4.png"  data-inline="true"style="width:20%">
+
+	<div>  
+	
+
+
+  		<input  type="image"  name="png1"  id="png1"  img  src="11.png"  onClick="abc()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png2"  id="png2"  img  src="12.png"  data-inline="true"style="width:23%">
+  		<input  type="image"  name="png3"  id="png3"  img  src="13.png"  data-inline="true"style="width:23%">
+  		<input  type="image"  name="png4"  id="png4"  img  src="14.png"  data-inline="true"style="width:23%">
+
+  		<table  width="100%" style="table-layout:fixed">
+  		<tr align="center" valign="middle" >
+		<td colspan="2">農田</td><td colspan="2">畜牧</td><td colspan="2">商店</td><td colspan="2">工廠</td>
+	    </tr>
+		<tr align="center" valign="middle" >
+		<td>需電量</td><td></td><td>需電量</td><td ></td><td>需電量</td><td ></td><td>需電量</td><td ></td>
+	    </tr>
+
+		<tr align="center" valign="middle" >
+		<td>年收入</td><td ></td><td>年收入</td><td ></td><td>年收入</td><td ></td><td>年收入</td><td ></td>
+		</tr>
+
+		<tr align="center" valign="middle" >
+		<td>年碳排放</td><td ></td><td>年碳排放</td><td ></td><td>年碳排放</td><td ></td><td>年碳排放</td><td ></td>
+		</td>
+
+		</table>			
+
 	</div>
 
     <div>
     	<input type="button" value="下一年"   onClick="next()" style=" text-align:center; background-color:#FFFF6F;">
     </div>
 
-    <div>
-		<table  width="100%" >
-		<tr align="center" valign="middle" >
-		<td  width="20%">生產</td><td ></td>
-		</tr>
-		<tr align="center" valign="middle" >
-		<td   width="20%">能源</td><td ></td>
-		</tr>
-		<tr align="center" valign="middle" >
-		<td   width="20%">技術</td><td ></td>
-		</tr>
-    	</table>
-    </div>
+
 
 
      </div>
