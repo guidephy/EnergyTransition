@@ -52,8 +52,9 @@
         <input type="button" value="技術"  onClick="technology()" style="width:10%;  text-align:center; background-color:#4DFFFF;"data-inline="true">
 	</div>
 
+<div id='production'>
 
-	<div id='production'>  
+	<div id='production1'>  
 	
 
 
@@ -65,35 +66,67 @@
 
 	</div>
 
-		<div id='energy'  style="display: none;">  
+	<div id='production2' style="display: none;">  
 	
 
 
-  		<input  type="image"  name="png5"  id="png5"  img  src="5.png"  onClick="png5()" data-inline="true"style="width:23%">
-  		<input  type="image"  name="png6"  id="png6"  img  src="6.png"  onClick="png6()" data-inline="true"style="width:23%">
-  		<input  type="image"  name="png7"  id="png7"  img  src="7.png"  onClick="png7()" data-inline="true"style="width:23%">
-  		<input  type="image"  name="png8"  id="png8"  img  src="8.png"  onClick="png8()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png5"  id="png5"  img  src="5.png"  onClick="png1()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png6"  id="png6"  img  src="6.png"  onClick="png2()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png7"  id="png7"  img  src="7.png"  onClick="png3()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png8"  id="png8"  img  src="8.png"  onClick="png4()" data-inline="true"style="width:23%">
 		
 
 	</div>
 
-	<div id='technology'  style="display: none;">  
+	<button id="productionNextBtn" onclick="productionNextBtn()" style="display: none;">下一頁</button>
+	<button id="productionPreBtn" onclick="productionPreBtn()" style="display: none;">上一頁</button>
+
+</div>
+
+<div id='energy' style="display: none;">
+
+	<div id='energy1'  >  
 	
 
 
-  		<input  type="image"  name="png1"  id="png1"  img  src="1.png"  onClick="png1()" data-inline="true"style="width:23%">
-  		<input  type="image"  name="png2"  id="png2"  img  src="2.png"  onClick="png2()" data-inline="true"style="width:23%">
-  		<input  type="image"  name="png3"  id="png3"  img  src=""  onClick="png3()" data-inline="true"style="width:23%">
-  		<input  type="image"  name="png4"  id="png4"  img  src="4.png"  onClick="png4()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png9"  id="png9"  img  src="9.png"  onClick="png9()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png10"  id="png10"  img  src="10.png"  onClick="png10()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png11"  id="png11"  img  src="11.png"  onClick="png11()" data-inline="true"style="width:23%">
 		
 
 	</div>
 
-    <div>
-    	
-    </div>
+	
+
+	<div id='energy2'  style="display: none;">  
+	
 
 
+  		<input  type="image"  name="png12"  id="png12"  img  src="12.png"  onClick="png12()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png13"  id="png13"  img  src="13.png"  onClick="png13()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png14"  id="png14"  img  src="14.png"  onClick="png14()" data-inline="true"style="width:23%">
+		
+
+	</div>
+	<button id="energyNextBtn" onclick="energyNextBtn()" style="display: none;">下一頁</button>
+	<button id="energyPreBtn" onclick="energyPreBtn()" style="display: none;">上一頁</button>
+
+</div>
+
+<div id='technology'  style="display: none;">  
+	
+	<div id='technology1'  >  
+
+  		<input  type="image"  name="png15"  id="png15"  img  src="15.png"  onClick="png15()" data-inline="true"style="width:23%">
+  		<input  type="image"  name="png16"  id="png16"  img  src="16.png"  onClick="png16()" data-inline="true"style="width:23%;display: none;">
+  		<input  type="image"  name="png17"  id="png17"  img  src="17.png"  onClick="png17()" data-inline="true"style="width:23%;display: none;">
+  		<input  type="image"  name="png18"  id="png18"  img  src="18.png"  onClick="png18()" data-inline="true"style="width:23%;display: none;">
+  		<input  type="image"  name="png19"  id="png19"  img  src="19.png"  onClick="png19()" data-inline="true"style="width:23%;display: none;">
+  		<input  type="image"  name="png20"  id="png20"  img  src="20.png"  onClick="png20()" data-inline="true"style="width:23%;display: none;">
+		
+
+	</div>
+</div>
 
 
      </div>
@@ -107,17 +140,19 @@ var totalPower=0;
 var annualIncome=0;
 var annualcarbonEmission=0;
 var powerUseful=0;
-var totalMoney=100;
+var totalMoney=10;
 var totalcarbonEmission=0;
+
+var level=1;
 
 function png1(){
 
-	if(totalMoney>=50){
+	if(totalMoney>=5){
 	totalPower=totalPower+0;
-	annualIncome=annualIncome+10;
-	annualcarbonEmission=annualcarbonEmission+1;
+	annualIncome=annualIncome+1000000;
+	annualcarbonEmission=annualcarbonEmission+0.1;
     powerUseful=powerUseful+0;
-    totalMoney=totalMoney-50;
+    totalMoney=totalMoney-5;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
@@ -132,12 +167,12 @@ function png1(){
 }
 
 function png2(){
-	if(totalMoney>=100){
+	if(totalMoney>=6){
 	totalPower=totalPower+0;
-	annualIncome=annualIncome+25;
-	annualcarbonEmission=annualcarbonEmission+5;
+	annualIncome=annualIncome+2;
+	annualcarbonEmission=annualcarbonEmission+0.4;
     powerUseful=powerUseful+0;
-    totalMoney=totalMoney-100;
+    totalMoney=totalMoney-6;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
@@ -152,12 +187,12 @@ function png2(){
 }
 
 function png3(){
-	if(totalMoney>=300&&powerUseful>=5){
+	if(totalMoney>=10){
 	totalPower=totalPower+0;
-	annualIncome=annualIncome+100;
-	annualcarbonEmission=annualcarbonEmission+20;
-    powerUseful=powerUseful-5;
-    totalMoney=totalMoney-300;
+	annualIncome=annualIncome+3;
+	annualcarbonEmission=annualcarbonEmission+1;
+    powerUseful=powerUseful;
+    totalMoney=totalMoney-10;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
@@ -172,12 +207,12 @@ function png3(){
 }
 
 function png4(){
-	if(totalMoney>=1000&&powerUseful>=100){
+	if(totalMoney>=30){
 	totalPower=totalPower+0;
-	annualIncome=annualIncome+400;
-	annualcarbonEmission=annualcarbonEmission+200;
-    powerUseful=powerUseful-100;
-    totalMoney=totalMoney-1000;
+	annualIncome=annualIncome+10;
+	annualcarbonEmission=annualcarbonEmission+2;
+    powerUseful=powerUseful;
+    totalMoney=totalMoney-30;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
@@ -192,12 +227,93 @@ function png4(){
 }
 
 function png5(){
+	if(totalMoney>=500&&powerUseful>=10){
+	totalPower=totalPower+0;
+	annualIncome=annualIncome+180;
+	annualcarbonEmission=annualcarbonEmission+90;
+    powerUseful=powerUseful-10;
+    totalMoney=totalMoney-500;
+
+	document.getElementById("totalPower").innerHTML=totalPower+" 度";
+	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+" 公斤";
+	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+	}else{
+    	alert("目前條件無法購買");
+    }
+
+	
+}
+
+function png6(){
+	if(totalMoney>=6000&&powerUseful>=200){
+	totalPower=totalPower+0;
+	annualIncome=annualIncome+2200;
+	annualcarbonEmission=annualcarbonEmission+2500;
+    powerUseful=powerUseful-200;
+    totalMoney=totalMoney-6000;
+
+	document.getElementById("totalPower").innerHTML=totalPower+" 度";
+	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+" 公斤";
+	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+	}else{
+    	alert("目前條件無法購買");
+    }
+
+	
+}
+
+function png7(){
+	if(totalMoney>=300000&&powerUseful>=1200){
+	totalPower=totalPower+0;
+	annualIncome=annualIncome+12000;
+	annualcarbonEmission=annualcarbonEmission+10000;
+    powerUseful=powerUseful-1200;
+    totalMoney=totalMoney-300000;
+
+	document.getElementById("totalPower").innerHTML=totalPower+" 度";
+	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+" 公斤";
+	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+	}else{
+    	alert("目前條件無法購買");
+    }
+
+	
+}
+
+function png8(){
+	if(totalMoney>=200000&&powerUseful>=10000){
+	totalPower=totalPower+0;
+	annualIncome=annualIncome+90000;
+	annualcarbonEmission=annualcarbonEmission+90000;
+    powerUseful=powerUseful-10000;
+    totalMoney=totalMoney-200000;
+
+	document.getElementById("totalPower").innerHTML=totalPower+" 度";
+	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+" 公斤";
+	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+	}else{
+    	alert("目前條件無法購買");
+    }
+
+	
+}
+
+//水力
+function png9(){
 
 	if(totalMoney>=1000){
-	totalPower=totalPower+5;
-	annualIncome=annualIncome-10;
-	annualcarbonEmission=annualcarbonEmission+5;
-    powerUseful=powerUseful+5;
+	totalPower=totalPower+10;
+	annualIncome=annualIncome-50;
+	annualcarbonEmission=annualcarbonEmission+20;
+    powerUseful=powerUseful+10;
     totalMoney=totalMoney-1000;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
@@ -212,12 +328,13 @@ function png5(){
 	
 }
 
-function png6(){
+//燃煤
+function png10(){
 
 	if(totalMoney>=10000){
 	totalPower=totalPower+500;
 	annualIncome=annualIncome-200;
-	annualcarbonEmission=annualcarbonEmission+500;
+	annualcarbonEmission=annualcarbonEmission+5000;
     powerUseful=powerUseful+500;
     totalMoney=totalMoney-10000;
 
@@ -233,12 +350,13 @@ function png6(){
 	
 }
 
-function png7(){
+//燃氣
+function png11(){
 
 	if(totalMoney>=20000){
 	totalPower=totalPower+500;
 	annualIncome=annualIncome-500;
-	annualcarbonEmission=annualcarbonEmission+300;
+	annualcarbonEmission=annualcarbonEmission+3000;
     powerUseful=powerUseful+500;
     totalMoney=totalMoney-20000;
 
@@ -254,13 +372,14 @@ function png7(){
 	
 }
 
-function png8(){
+//核能
+function png12(){
 
 	if(totalMoney>=100000){
-	totalPower=totalPower+200;
-	annualIncome=annualIncome-10000;
-	annualcarbonEmission=annualcarbonEmission+4;
-    powerUseful=powerUseful+200;
+	totalPower=totalPower+600;
+	annualIncome=annualIncome-1500;
+	annualcarbonEmission=annualcarbonEmission+150;
+    powerUseful=powerUseful+600;
     totalMoney=totalMoney-100000;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
@@ -274,6 +393,191 @@ function png8(){
 
 	
 }
+
+//太陽能
+function png13(){
+
+	if(totalMoney>=200000){
+	totalPower=totalPower+300;
+	annualIncome=annualIncome-50;
+	annualcarbonEmission=annualcarbonEmission+10;
+    powerUseful=powerUseful+300;
+    totalMoney=totalMoney-200000;
+
+	document.getElementById("totalPower").innerHTML=totalPower+" 度";
+	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+" 公斤";
+	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+    }else{
+    	alert("目前條件無法購買");
+    }
+
+	
+}
+
+//風力
+function png14(){
+
+	if(totalMoney>=400000){
+	totalPower=totalPower+200;
+	annualIncome=annualIncome-100;
+	annualcarbonEmission=annualcarbonEmission+4;
+    powerUseful=powerUseful+200;
+    totalMoney=totalMoney-400000;
+
+	document.getElementById("totalPower").innerHTML=totalPower+" 度";
+	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+" 公斤";
+	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+    }else{
+    	alert("目前條件無法購買");
+    }
+
+	
+}
+
+function png15(){
+
+	if(totalMoney>=5000&&annualIncome>=1000){
+
+    totalMoney=totalMoney-5000;
+
+    level=level+1;
+
+    document.getElementById("productionNextBtn").style.display='';
+
+    document.getElementById("png15").style.display='none';
+    document.getElementById("png16").style.display='';
+
+    alert("恭喜產業升級，有新的產業和技術可以選擇，並開放能源功能");
+
+	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+    }else{
+    	alert("目前條件無法購買");
+    }
+
+	
+}
+
+function png16(){
+
+	if(totalMoney>=100000&&annualIncome>=10000){
+
+    totalMoney=totalMoney-100000;
+
+    level=level+1;
+
+
+    document.getElementById("energyNextBtn").style.display='';
+
+    document.getElementById("png16").style.display='none';
+    document.getElementById("png17").style.display='';
+    document.getElementById("png18").style.display='';
+    document.getElementById("png19").style.display='';
+    document.getElementById("png20").style.display='';
+   
+
+    alert("恭喜產業升級，有新的能源和技術可以選擇");
+
+	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+    }else{
+    	alert("目前條件無法購買");
+    }
+
+	
+}
+
+
+
+function png17(){
+
+	if(totalMoney>=500000){
+
+        alert("開發中");
+
+	}else{
+		alert("目前條件無法購買");
+	}
+	
+
+}
+
+function png18(){
+
+	if(totalMoney>=1000000){
+
+        alert("開發中");
+
+	}else{
+		alert("目前條件無法購買");
+	}
+	
+
+}
+
+function png19(){
+
+	if(totalMoney>=5000000){
+
+        alert("開發中");
+
+	}else{
+		alert("目前條件無法購買");
+	}
+	
+
+}
+
+function png20(){
+
+	if(totalMoney>=10000000){
+
+        alert("開發中");
+
+	}else{
+		alert("目前條件無法購買");
+	}
+
+
+}
+
+
+function productionNextBtn(){
+document.getElementById("production1").style.display='none';	
+document.getElementById("production2").style.display='';
+document.getElementById("productionNextBtn").style.display='none';	
+document.getElementById("productionPreBtn").style.display='';
+
+}
+
+function productionPreBtn(){
+document.getElementById("production1").style.display='';	
+document.getElementById("production2").style.display='none';
+document.getElementById("productionNextBtn").style.display='';	
+document.getElementById("productionPreBtn").style.display='none';
+
+}
+
+function energyNextBtn(){
+document.getElementById("energy1").style.display='none';	
+document.getElementById("energy2").style.display='';
+document.getElementById("energyNextBtn").style.display='none';	
+document.getElementById("energyPreBtn").style.display='';
+
+}
+
+function energyPreBtn(){
+document.getElementById("energy1").style.display='';	
+document.getElementById("energy2").style.display='none';
+document.getElementById("energyNextBtn").style.display='';	
+document.getElementById("energyPreBtn").style.display='none';
+
+}
+
+
+
 
 
 function next(){
@@ -300,19 +604,23 @@ document.getElementById("technology").style.display='none';
 
 function energy(){
 
-  document.getElementById("production").style.display='none';
-  document.getElementById("energy").style.display='';
-  document.getElementById("technology").style.display='none';
+if (level==1) {
+	alert("目前技術還未成熟，需進行產業升級才能使用");
+}else{
 
+document.getElementById("production").style.display='none';
+document.getElementById("energy").style.display='';
+document.getElementById("technology").style.display='none';
+}
 	
 }
 
 function technology(){
 
-  document.getElementById("production").style.display='none';
-  document.getElementById("energy").style.display='none';
-  document.getElementById("technology").style.display='none';
-  alert("開發中");
+document.getElementById("production").style.display='none';
+document.getElementById("energy").style.display='none';
+document.getElementById("technology").style.display='';
+
 
 	
 }
