@@ -27,8 +27,18 @@
      <button id="sendBtn" onclick="send()">送出</button>
      </div>
 
+     <div id="story" align="center" style="display: none;">
 
-	 <div id="playBoard" align="center" style='visibility:hidden'>
+     	<img id="storyImg" src="story01.png" width="90%"><br>
+     	  <button id="storybackBtn" onclick="back()" style='visibility:hidden' data-inline="true" >Back</button>
+          <button id="storynextBtn" onclick="next()" data-inline="true" >Next</button>
+          <button id="startgame" onclick="startgame()" data-inline="true"  style=" width:30%;background-color:#FFFF6F; display: none;">開始遊戲</button>
+
+        
+     </div>
+
+
+	 <div id="playBoard" align="center" style="display: none;">
     
 
 	<table  width="100%" style="table-layout:fixed">
@@ -135,6 +145,7 @@
 
 var username=document.getElementById("usernameId").value;
 var year=1;
+var si=1;
 
 var totalPower=0;
 var annualIncome=0;
@@ -629,8 +640,7 @@ function send(){
 
 	document.getElementById("idCheck").remove();
 
-    document.getElementById("playBoard").style.visibility='visible';  
-
+    document.getElementById("story").style.display=''
     document.getElementById("year").innerHTML="第"+year+"年";   
 
 
@@ -638,6 +648,49 @@ function send(){
 
 
 	}
+
+    function next(){
+      si=si+1;
+     if(si==2){
+       document.getElementById("storyImg").src="story02.png";
+       
+       document.getElementById("storybackBtn").style.visibility='visible';
+     }else if(si==3){
+       document.getElementById("storyImg").src="story03.png";
+     }else if(si==4){
+       document.getElementById("storyImg").src="story04.png";
+       document.getElementById("storynextBtn").style.visibility='hidden';
+           document.getElementById("startgame").style.display=''
+
+       
+     }
+    };
+      
+        function back(){
+      si=si-1;
+     if(si==2){
+       document.getElementById("storyImg").src="story02.png";
+     }else if(si==3){
+       document.getElementById("storyImg").src="story03.png";
+
+       document.getElementById("storynextBtn").style.visibility='visible';
+       document.getElementById("startgame").style.display='none'
+
+       
+     }else if(si==1){
+       document.getElementById("storyImg").src="story01.png";
+       
+       document.getElementById("storybackBtn").style.visibility='hidden';
+
+     }
+    };
+
+    function startgame(){
+
+		document.getElementById("story").style.display='none'
+		document.getElementById("playBoard").style.display=''
+
+    }
 
 
 </script>
