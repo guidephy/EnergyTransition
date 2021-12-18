@@ -587,6 +587,7 @@ function next(){
     totalcarbonEmission=totalcarbonEmission+annualcarbonEmission;
 
     document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+	totalcarbonEmission=totalcarbonEmission.toFixed(1);
     document.getElementById("totalcarbonEmission").innerHTML=totalcarbonEmission+" 公斤";
 
     year=year+1;
