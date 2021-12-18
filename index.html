@@ -150,7 +150,7 @@ function png1(){
 	if(totalMoney>=5){
 	totalPower=totalPower+0;
 	annualIncome=annualIncome+1;
-	annualcarbonEmission=annualcarbonEmission+0.1;
+	annualcarbonEmission=annualcarbonEmission+1;
     powerUseful=powerUseful+0;
     totalMoney=totalMoney-5;
 
@@ -170,7 +170,7 @@ function png2(){
 	if(totalMoney>=6){
 	totalPower=totalPower+0;
 	annualIncome=annualIncome+2;
-	annualcarbonEmission=annualcarbonEmission+0.4;
+	annualcarbonEmission=annualcarbonEmission+2;
     powerUseful=powerUseful+0;
     totalMoney=totalMoney-6;
 
@@ -190,7 +190,7 @@ function png3(){
 	if(totalMoney>=10){
 	totalPower=totalPower+0;
 	annualIncome=annualIncome+3;
-	annualcarbonEmission=annualcarbonEmission+1;
+	annualcarbonEmission=annualcarbonEmission+2;
     powerUseful=powerUseful;
     totalMoney=totalMoney-10;
 
@@ -587,7 +587,6 @@ function next(){
     totalcarbonEmission=totalcarbonEmission+annualcarbonEmission;
 
     document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
-	totalcarbonEmission=totalcarbonEmission.toFixed(1);
     document.getElementById("totalcarbonEmission").innerHTML=totalcarbonEmission+" 公斤";
 
     year=year+1;
