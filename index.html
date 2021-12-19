@@ -159,13 +159,14 @@ var year=1;
 var si=1;
 
 var totalPower=0;
-var annualIncome=0;
+var annualIncome=1000;
 var annualcarbonEmission=0;
 var powerUseful=0;
-var totalMoney=10;
+var totalMoney=5000;
 var totalcarbonEmission=0;
 
 var level=1;
+
 
 function png1(){
 
@@ -473,7 +474,16 @@ function png15(){
     document.getElementById("png15").style.display='none';
     document.getElementById("png16").style.display='';
 
-    alert("恭喜產業升級，有新的產業和技術可以選擇，並開放能源功能");
+    document.getElementById("playBoard").style.display='none';
+    document.getElementById("story").style.display='';
+    document.getElementById("storyImg").src="story11.jpg";
+    si=1;
+    document.getElementById("storynextBtn").style.visibility='visible';
+    document.getElementById("storybackBtn").style.visibility='hidden';
+    document.getElementById("startgame").style.display='none';
+
+
+  
 
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     }else{
@@ -662,6 +672,8 @@ function send(){
 	}
 
     function next(){
+
+    if (level==1) {
       si=si+1;
      if(si==2){
        document.getElementById("storyImg").src="story02.jpg";
@@ -673,12 +685,30 @@ function send(){
        document.getElementById("storyImg").src="story04.jpg";
        document.getElementById("storynextBtn").style.visibility='hidden';
            document.getElementById("startgame").style.display=''
-
-       
      }
+     }else if (level==2) {
+
+	 si=si+1;
+     if(si==2){
+       document.getElementById("storyImg").src="story12.jpg";
+       
+       document.getElementById("storybackBtn").style.visibility='visible';
+     }else if(si==3){
+       document.getElementById("storyImg").src="story13.jpg";
+     }else if(si==4){
+       document.getElementById("storyImg").src="story14.jpg";
+       document.getElementById("storynextBtn").style.visibility='hidden';
+           document.getElementById("startgame").style.display=''
+
+
+     };
+    };
+
     };
       
         function back(){
+
+         if (level==1) {	
       si=si-1;
      if(si==2){
        document.getElementById("storyImg").src="story02.jpg";
@@ -695,7 +725,29 @@ function send(){
        document.getElementById("storybackBtn").style.visibility='hidden';
 
      }
+ 	}else if (level==2) {
+
+ 		si=si-1;
+     if(si==2){
+       document.getElementById("storyImg").src="story12.jpg";
+     }else if(si==3){
+       document.getElementById("storyImg").src="story13.jpg";
+
+       document.getElementById("storynextBtn").style.visibility='visible';
+       document.getElementById("startgame").style.display='none'
+
+       
+     }else if(si==1){
+       document.getElementById("storyImg").src="story11.jpg";
+       
+       document.getElementById("storybackBtn").style.visibility='hidden';
+
+
+ 	};
+
     };
+	}
+
 
     function startgame(){
 
