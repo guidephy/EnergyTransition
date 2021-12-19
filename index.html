@@ -29,7 +29,7 @@
 
      <div id="story" align="center" style="display: none;">
 
-     	<img id="storyImg" src="story01.png" width="90%"><br>
+     	<img id="storyImg" src="story01.jpg" width="90%"><br>
      	  <button id="storybackBtn" onclick="back()" style='visibility:hidden' data-inline="true" >Back</button>
           <button id="storynextBtn" onclick="next()" data-inline="true" >Next</button>
           <button id="startgame" onclick="startgame()" data-inline="true"  style=" width:30%;background-color:#FFFF6F; display: none;">開始遊戲</button>
@@ -37,13 +37,24 @@
         
      </div>
 
+    <div id="howPlayImg" align="center" style="display: none;">
+
+    <table  width="100%" style="table-layout:fixed">
+    <tr align="center" valign="middle" >
+    	<td><input type="image"    img  src="back.png "  onClick="startgame()" style="width:30%"></td><td></td><td></td>
+    </tr>
+    </table>
+     <img src="story04.jpg" width="90%" align="center" >
+
+    </div>
+
 
 	 <div id="playBoard" align="center" style="display: none;">
     
 
 	<table  width="100%" style="table-layout:fixed">
     <tr align="center" valign="middle" >
-    	<td></td><td   colspan="4"> <h2 align="center" id="year" style="color:blue;"></h3></td><td><input type="button" value="下一年"   onClick="next()" style=" text-align:center; background-color:#FFFF6F;"></td>
+    	<td><input type="image"   id="howPlay"  img  src="howPlay.png "  onClick="howPlay()" style="width:10%"></td><td   colspan="4"> <h2 align="center" id="year" style="color:blue;"></h3></td><td><input type="button" value="下一年"   onClick="nextyear()" style=" text-align:center; background-color:#FFFF6F;"></td>
     </tr>
 
 	<tr align="center" valign="middle" >
@@ -591,7 +602,7 @@ document.getElementById("energyPreBtn").style.display='none';
 
 
 
-function next(){
+function nextyear(){
 
 	totalMoney=totalMoney+annualIncome;
 
@@ -652,13 +663,13 @@ function send(){
     function next(){
       si=si+1;
      if(si==2){
-       document.getElementById("storyImg").src="story02.png";
+       document.getElementById("storyImg").src="story02.jpg";
        
        document.getElementById("storybackBtn").style.visibility='visible';
      }else if(si==3){
-       document.getElementById("storyImg").src="story03.png";
+       document.getElementById("storyImg").src="story03.jpg";
      }else if(si==4){
-       document.getElementById("storyImg").src="story04.png";
+       document.getElementById("storyImg").src="story04.jpg";
        document.getElementById("storynextBtn").style.visibility='hidden';
            document.getElementById("startgame").style.display=''
 
@@ -669,16 +680,16 @@ function send(){
         function back(){
       si=si-1;
      if(si==2){
-       document.getElementById("storyImg").src="story02.png";
+       document.getElementById("storyImg").src="story02.jpg";
      }else if(si==3){
-       document.getElementById("storyImg").src="story03.png";
+       document.getElementById("storyImg").src="story03.jpg";
 
        document.getElementById("storynextBtn").style.visibility='visible';
        document.getElementById("startgame").style.display='none'
 
        
      }else if(si==1){
-       document.getElementById("storyImg").src="story01.png";
+       document.getElementById("storyImg").src="story01.jpg";
        
        document.getElementById("storybackBtn").style.visibility='hidden';
 
@@ -687,8 +698,16 @@ function send(){
 
     function startgame(){
 
-		document.getElementById("story").style.display='none'
-		document.getElementById("playBoard").style.display=''
+		document.getElementById("story").style.display='none';
+		document.getElementById("howPlayImg").style.display='none';
+		document.getElementById("playBoard").style.display='';
+
+    }
+
+    function howPlay(){
+
+    	document.getElementById("playBoard").style.display='none';
+    	document.getElementById("howPlayImg").style.display='';
 
     }
 
