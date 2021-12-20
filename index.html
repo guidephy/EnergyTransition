@@ -506,9 +506,23 @@ function png16(){
     document.getElementById("png18").style.display='';
     document.getElementById("png19").style.display='';
     document.getElementById("png20").style.display='';
-   
 
-    alert("恭喜產業升級，有新的能源和技術可以選擇");
+    document.getElementById("playBoard").style.display='none';
+    document.getElementById("story").style.display='';
+    document.getElementById("storyImg").src="story21.jpg";
+    si=1;
+    document.getElementById("storynextBtn").style.visibility='visible';
+    document.getElementById("storybackBtn").style.visibility='hidden';
+    document.getElementById("startgame").style.display='none';
+
+
+
+    document.getElementById("carbontitle").style.visibility='visible';
+    document.getElementById("carbonnumber").style.visibility='visible';
+    
+    
+
+   
 
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     }else{
@@ -699,9 +713,30 @@ function send(){
 
 
      };
-    };
+    }else if(level==3) {
+
+	 si=si+1;
+     if(si==2){
+       document.getElementById("storyImg").src="story22.jpg";
+       
+       document.getElementById("storybackBtn").style.visibility='visible';
+     }else if(si==3){
+       document.getElementById("storyImg").src="story23.jpg";
+     }else if(si==4){
+       document.getElementById("storyImg").src="story24.jpg";
+     }else if(si==5){
+       document.getElementById("storyImg").src="story25.jpg";
+     }else if(si==6){
+       document.getElementById("storyImg").src="story26.jpg";
+       document.getElementById("storynextBtn").style.visibility='hidden';
+           document.getElementById("startgame").style.display=''
+
+
+     };
 
     };
+    }
+
       
         function back(){
 
@@ -742,7 +777,33 @@ function send(){
 
  	};
 
-    };
+    }else if (level==3) {
+
+ 		si=si-1;
+     if(si==2){
+       document.getElementById("storyImg").src="story22.jpg";
+     }else if(si==3){
+       document.getElementById("storyImg").src="story23.jpg";
+
+     }else if(si==4){
+       document.getElementById("storyImg").src="story24.jpg";
+
+     }else if(si==5){
+       document.getElementById("storyImg").src="story25.jpg";
+
+       document.getElementById("storynextBtn").style.visibility='visible';
+       document.getElementById("startgame").style.display='none'
+
+       
+     }else if(si==1){
+       document.getElementById("storyImg").src="story21.jpg";
+       
+       document.getElementById("storybackBtn").style.visibility='hidden';
+
+
+ 	};
+
+    }
 	}
 
 
