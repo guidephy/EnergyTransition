@@ -217,7 +217,7 @@ function png1(){
 	if(totalMoney>=5){
 	totalPower=totalPower+0;
 	annualIncome=annualIncome+1;
-	annualcarbonEmission=annualcarbonEmission+1;
+	annualcarbonEmission=annualcarbonEmission+0;
     powerUseful=powerUseful+0;
     totalMoney=totalMoney-5;
 
@@ -620,6 +620,10 @@ function png17(){
 function png18(){
 
 	if(totalMoney>=1000000){
+
+		totalMoney=totalMoney-1000000;
+		document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+
 
         alert("開發碳封存技術成功，未來可使用此技術減少每年的碳排放");
         document.getElementById("png18").style.display='none';
