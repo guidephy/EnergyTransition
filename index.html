@@ -197,7 +197,7 @@ var si=1;
 
 var totalPower=0;
 var annualIncome=0;
-var annualcarbonEmission=200;
+var annualcarbonEmission=0;
 var powerUseful=0;
 var totalMoney=10;
 var totalcarbonEmission=0;
@@ -622,7 +622,7 @@ function png18(){
 	if(totalMoney>=1000000){
 
         alert("開發碳封存技術成功，未來可使用此技術減少每年的碳排放");
-        document.getElementById("png17").style.display='none';
+        document.getElementById("png18").style.display='none';
         document.getElementById("png27").style.display='';
 
 
@@ -1021,6 +1021,8 @@ function send(){
        document.getElementById("storyImg").src="story25.jpg";
      }else if(si==6){
        document.getElementById("storyImg").src="story26.jpg";
+     }else if(si==7){
+       document.getElementById("storyImg").src="story27.jpg";
        document.getElementById("storynextBtn").style.visibility='hidden';
            document.getElementById("startgame").style.display=''
 
@@ -1085,6 +1087,9 @@ function send(){
 
      }else if(si==5){
        document.getElementById("storyImg").src="story25.jpg";
+
+     }else if(si==6){
+       document.getElementById("storyImg").src="story26.jpg";
 
        document.getElementById("storynextBtn").style.visibility='visible';
        document.getElementById("startgame").style.display='none'
