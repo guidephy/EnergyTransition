@@ -14,8 +14,8 @@
  <body bgcolor="#ECFFFF">
 
 	 <div id="idCheck" align="center">
-	 <h2 align="center" style="color:blue;">Planet285計畫</h2>
-     <input type="text"   id="usernameId" placeholder="請輸入名字">
+	 <h2 align="center" style="color:blue;">Project Planet-285</h2>
+     <input   id="username" placeholder="請輸入名字">
      <button id="sendBtn" onclick="send()">送出</button>
      </div>
 
@@ -53,7 +53,7 @@
 
 
 	<tr align="center" valign="middle" >
-		<td  ><h3>年發電量</h3><h3>可用電量</h3></td><td  align="left"><h3 id="totalPower" >0 度</h3><h3 id="powerUseful" >0 度</h3></td><td ><h3>年收入</h3><h3>財力</h3></td><td align="left"><h3 id="annualIncome" >0 元</h3><h3 id="totalMoney" >10 元</h3></td><td style='visibility:hidden' id="carbontitle"><h3 >每年碳排量</h3><h3 >累積碳排量</h3></td><td align="left" style='visibility:hidden' id="carbonnumber"><h2 id="annualcarbonEmission" >0 公斤</h3><h3 id="totalcarbonEmission" >0 公斤</h3></td>
+		<td  ><p>年發電量</p><p>可用電量</p></td><td  align="left"><p id="totalPower" >0 度</p><p id="powerUseful" >0 度</p></td><td ><p>年收入</p><p>財力</p></td><td align="left"><p id="annualIncome" >0 元</p><p id="totalMoney" >10 元</p></td><td style='visibility:hidden' id="carbontitle"><p >每年碳排量</p><p >累積碳排量</p></td><td align="left" style='visibility:hidden' id="carbonnumber"><p id="annualcarbonEmission" >0 公斤</p><p id="totalcarbonEmission" >0 公斤</p></td>
 	</tr>
 	 <tr  align="center" id="oldoption" >
     	<td   colspan="2" align="right"><input type="image"     img  src="production.png"  onClick="production()" style="width:30%"></td><td   colspan="2">	<input type="image"     img  src="energy.png"  onClick="energy()" style="width:30%"></td><td   colspan="2" align="left"><input type="image"     img  src="technology.png"  onClick="technology()" style="width:30%"></td>  
@@ -135,6 +135,7 @@
   		<input  type="image"  name="png16"  id="png16"  img  src="16.png"  onClick="png16()" data-inline="true"style="width:23%;display: none;">
   		<input  type="image"  name="png17"  id="png17"  img  src="17.png"  onClick="png17()" data-inline="true"style="width:23%;display: none;">
   		<input  type="image"  name="png18"  id="png18"  img  src="18.png"  onClick="png18()" data-inline="true"style="width:23%;display: none;">
+  		<input  type="image"  name="png27"  id="png27"  img  src="27.png"  onClick="png27()" data-inline="true"style="width:23%;display: none;">
   		<input  type="image"  name="png19"  id="png19"  img  src="19.png"  onClick="png19()" data-inline="true"style="width:23%;display: none;">
   		<input  type="image"  name="png20"  id="png20"  img  src="20.png"  onClick="png20()" data-inline="true"style="width:23%;display: none;">
 		
@@ -168,22 +169,35 @@
 
 	</div>
 
-</div>
-
-
+	</div>
 
 
      </div>
 
+     <div id="win" style="display: none;">
+	<h2 align="center" style="color:blue;">Project Planet-285</h2>
+	<br><br>
+
+	<h3 align="center" style="color:black;" id='score'></h3>
+
+    </div>
+
+
+
  <script>
 
-var username=document.getElementById("usernameId").value;
+ 	var username
 var year=1;
+
+var year1to2=0;
+var year2to3=0;
+var annualcarbonEmission1to2=0;
+var annualcarbonEmission2to3=0;
 var si=1;
 
 var totalPower=0;
 var annualIncome=0;
-var annualcarbonEmission=0;
+var annualcarbonEmission=200;
 var powerUseful=0;
 var totalMoney=10;
 var totalcarbonEmission=0;
@@ -505,6 +519,9 @@ function png15(){
 
     level=level+1;
 
+    year1to2=year;
+    annualcarbonEmission1to2=annualcarbonEmission;
+
     document.getElementById("productionNextBtn").style.display='';
 
     document.getElementById("png15").style.display='none';
@@ -536,6 +553,9 @@ function png16(){
     totalMoney=totalMoney-100000;
 
     level=level+1;
+
+    year2to3=year;
+    annualcarbonEmission2to3=annualcarbonEmission;
 
 
     document.getElementById("energyNextBtn").style.display='';
@@ -601,7 +621,10 @@ function png18(){
 
 	if(totalMoney>=1000000){
 
-        alert("開發中");
+        alert("開發碳封存技術成功，未來可使用此技術減少每年的碳排放");
+        document.getElementById("png17").style.display='none';
+        document.getElementById("png27").style.display='';
+
 
 	}else{
 		alert("目前條件無法購買");
@@ -614,7 +637,7 @@ function png19(){
 
 	if(totalMoney>=5000000){
 
-        alert("開發中");
+        alert("遊戲開發中，目前尚無法開發此技術");
 
 	}else{
 		alert("目前條件無法購買");
@@ -627,7 +650,7 @@ function png20(){
 
 	if(totalMoney>=10000000){
 
-        alert("開發中");
+        alert("遊戲開發中，目前尚無法開發此技術");
 
 	}else{
 		alert("目前條件無法購買");
@@ -651,7 +674,7 @@ function png21(){
         document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
 	    document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
-	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
+	    document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
 	    alert("已拆除一座水力發電廠");
 
@@ -679,7 +702,7 @@ function png22(){
         document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
 	    document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
-	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
+	    document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
 	    alert("已拆除一座燃煤發電廠");
 
@@ -707,7 +730,7 @@ function png23(){
         document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
 	    document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
-	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
+	    document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
 	    alert("已拆除一座燃氣發電廠");
 
@@ -734,7 +757,7 @@ function png24(){
         document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
 	    document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
-	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
+	    document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
 	    alert("已拆除一座核能發電廠");
 
@@ -760,7 +783,7 @@ function png25(){
         document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
 	    document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
-	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
+	    document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
 	    alert("已拆除一座太陽能發電廠");
 
@@ -794,6 +817,25 @@ function png26(){
 	}else{
 		alert("目前條件無法拆除");
 	}
+
+}
+
+
+function png27(){
+
+   if(totalMoney>=1000000){
+
+   	totalMoney=totalMoney-1000000;
+   	annualcarbonEmission=annualcarbonEmission-200;
+
+   	 alert("已進行碳封存，每年碳排放將減少200公斤");
+
+	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+
+   	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
+    }else{
+    	alert("你的錢不夠開發新的碳封存");
+    }
 
 }
 
@@ -833,6 +875,22 @@ document.getElementById("energyPreBtn").style.display='none';
 
 function nextyear(){
 
+	if (annualIncome>=10000&&annualcarbonEmission<=0) {
+
+
+
+		alert("恭喜過關");
+		document.getElementById("playBoard").style.display='none';
+		document.getElementById("win").style.display='';
+
+		document.getElementById("score").innerHTML=username+",恭喜你在第"+year1to2+"年進行第一次的產業升級，當時的年碳排量為"+annualcarbonEmission1to2+"公斤。"+ "<br>" +"接著在第"+year2to3+"年進行第二次的產業升級，當時的年碳排量為"+annualcarbonEmission2to3+"公斤。"+ "<br>" +"最後在第"+year+"年達到淨零碳排的目標，使Planet-285行星建立永續發展的典範";
+
+
+
+
+
+	}else{
+
 	totalMoney=totalMoney+annualIncome;
 
     totalcarbonEmission=totalcarbonEmission+annualcarbonEmission;
@@ -842,6 +900,7 @@ function nextyear(){
 
     year=year+1;
     document.getElementById("year").innerHTML="第"+year+"年";   
+    }
 
 
 }
@@ -900,6 +959,8 @@ document.getElementById("windnumber").innerHTML=windnumber+" 座";
 }
 
 function send(){
+
+	 username=document.getElementById("username").value; 
 
 	document.getElementById("idCheck").remove();
 
