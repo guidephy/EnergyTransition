@@ -61,16 +61,20 @@
 
 
 	<tr align="center" valign="middle" >
-		<td  ><p>年總發電量</p><p>剩餘可用電量</p></td><td  align="left"><p id="totalPower" >0 度</p><p id="powerUseful" >0 度</p></td><td ><p>年收入</p><p>財力</p></td><td align="left"><p id="annualIncome" >0 元</p><p id="totalMoney" >10 元</p></td><td style='visibility:hidden' id="carbontitle"><p >每年碳排量</p><p >累積碳排量</p></td><td align="left" style='visibility:hidden' id="carbonnumber"><p id="annualcarbonEmission" >0 公斤</p><p id="totalcarbonEmission" >0 公斤</p></td>
+		<td  ><h2>年總發電量</h2><h2>剩餘可用電量</h2></td><td  align="left"><h2 id="totalPower" >0 度</h2><h2 id="powerUseful" >0 度</h2></td><td ><h2>年收入</h2><h2>財力</h2></td><td align="left"><h2 id="annualIncome" >0 元</h2><h2 id="totalMoney" >10 元</h2></td><td style='visibility:hidden' id="carbontitle"><h2 >每年碳排量</h2><h2 >累積碳排量</h2></td><td align="left" style='visibility:hidden' id="carbonnumber"><h2 id="annualcarbonEmission" >0 公斤</h2><h2 id="totalcarbonEmission" >0 公斤</h2></td>
 	</tr>
-	 <tr  align="center">
+	 <tr  align="center" id="oldoption" >
     	<td   colspan="2" align="right"><input type="image"     img  src="production.png"  onClick="production()" style="width:30%"></td><td   colspan="2">	<input type="image"     img  src="energy.png"  onClick="energy()" style="width:30%"></td><td   colspan="2" align="left"><input type="image"     img  src="technology.png"  onClick="technology()" style="width:30%"></td>  
+
+    </tr>
+    <tr  align="center" id="newoption" style="display: none;">
+    	<td></td><td    ><input type="image"     img  src="production.png"  onClick="production()" style="width:60%"></td><td   >	<input type="image"     img  src="energy.png"  onClick="energy()" style="width:60%"></td><td   ><input type="image"     img  src="technology.png"  onClick="technology()" style="width:60%"></td> <td><input type="image"     img  src="remove.png"  onClick="remove()" style="width:60%"></td><td></td> 
 
     </tr>
 
 	</table>
 
-<div id='production'>
+<div id='production' >
 
 	<div id='production1'>  
 	
@@ -147,6 +151,36 @@
 </div>
 
 
+<div id='energyremove' style="display: none;">
+
+	
+		<table  width="100%" style="table-layout:fixed">	
+			<tr align="center" valign="middle" >
+		    <td  ><h2>水力發電</h2><h2>核能發電</h2></td><td  align="left"><h2 id="waternumber" >0 座</h2><h2 id="nuclearnumber" >0 座</h2></td><td ><h2>燃煤發電</h2><h2>太陽能發電</h2></td><td align="left"><h2 id="coalnumber" >0 座</h2><h2 id="solarnumber" >10 座</h2></td><td ><h2 >燃氣發電</h2><h2 >風力發電</h2></td><td align="left" ><h2 id="gasnumber" >0 座</h2><h2 id="windnumber" >0 座</h2></td>
+	        </tr>
+
+		</table>
+ 
+	
+
+
+  		<input  type="image"  img  src="21.png"  onClick="png21()" data-inline="true"style="width:23%">
+  		<input  type="image"    img  src="22.png"  onClick="png22()" data-inline="true"style="width:23%">
+  		<input  type="image"    img  src="23.png"  onClick="png23()" data-inline="true"style="width:23%">
+        <br>
+
+  		<input  type="image"    img  src="24.png"  onClick="png24()" data-inline="true"style="width:23%">
+  		<input  type="image"    img  src="25.png"  onClick="png25()" data-inline="true"style="width:23%">
+  		<input  type="image"   img  src="26.png"  onClick="png26()" data-inline="true"style="width:23%">
+		
+
+	</div>
+
+</div>
+
+
+
+
      </div>
 
  <script>
@@ -163,6 +197,13 @@ var totalMoney=10;
 var totalcarbonEmission=0;
 
 var level=1;
+
+var waternumber=0;
+var coalnumber=0;
+var gasnumber=0;
+var nuclearnumber=0;
+var solarnumber=0;
+var windnumber=0;
 
 
 function png1(){
@@ -335,6 +376,7 @@ function png9(){
 	annualcarbonEmission=annualcarbonEmission+20;
     powerUseful=powerUseful+10;
     totalMoney=totalMoney-1000;
+    waternumber=waternumber+1;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
@@ -357,6 +399,7 @@ function png10(){
 	annualcarbonEmission=annualcarbonEmission+5000;
     powerUseful=powerUseful+500;
     totalMoney=totalMoney-10000;
+    coalnumber=coalnumber+1;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
@@ -379,6 +422,7 @@ function png11(){
 	annualcarbonEmission=annualcarbonEmission+3000;
     powerUseful=powerUseful+500;
     totalMoney=totalMoney-20000;
+    gasnumber=gasnumber+1;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
@@ -401,6 +445,7 @@ function png12(){
 	annualcarbonEmission=annualcarbonEmission+150;
     powerUseful=powerUseful+600;
     totalMoney=totalMoney-100000;
+    nuclearnumber=nuclearnumber+1;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
@@ -423,6 +468,7 @@ function png13(){
 	annualcarbonEmission=annualcarbonEmission+10;
     powerUseful=powerUseful+300;
     totalMoney=totalMoney-200000;
+    solarnumber=solarnumber+1;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
@@ -445,6 +491,7 @@ function png14(){
 	annualcarbonEmission=annualcarbonEmission+4;
     powerUseful=powerUseful+200;
     totalMoney=totalMoney-400000;
+    windnumber=windnumber+1;
 
 	document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
@@ -538,7 +585,18 @@ function png17(){
 
 	if(totalMoney>=500000){
 
-        alert("開發中");
+		totalMoney=totalMoney-500000;
+
+       document.getElementById("oldoption").style.display='none';
+       document.getElementById("png17").style.display='none';
+        document.getElementById("newoption").style.display='';
+        document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+        alert("拆除電廠技術研發成功，可於拆除清單中，花錢拆除發電廠");
+
+
+
+
+        
 
 	}else{
 		alert("目前條件無法購買");
@@ -586,6 +644,166 @@ function png20(){
 
 }
 
+function png21(){
+
+	if(waternumber>=1 &&totalMoney>=2000&&powerUseful>=10){
+
+        waternumber=waternumber-1;
+        annualIncome=annualIncome+50;
+        totalMoney=totalMoney-2000;
+        powerUseful=powerUseful-10;
+        totalPower=totalPower-10;
+        annualcarbonEmission=annualcarbonEmission-20;
+
+        document.getElementById("waternumber").innerHTML=waternumber+" 座";
+        document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	    document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
+	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
+	    alert("已拆除一座水力發電廠");
+
+
+
+	}else{
+		alert("目前條件無法拆除");
+	}
+
+
+}
+
+function png22(){
+
+	if(coalnumber>=1 &&totalMoney>=20000&&powerUseful>=500){
+
+        coalnumber=coalnumber-1;
+        annualIncome=annualIncome+200;
+        totalMoney=totalMoney-20000;
+        powerUseful=powerUseful-500;
+        totalPower=totalPower-500;
+        annualcarbonEmission=annualcarbonEmission-5000;
+
+        document.getElementById("coalnumber").innerHTML=coalnumber+" 座";
+        document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	    document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
+	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
+	    alert("已拆除一座燃煤發電廠");
+
+
+	}else{
+		alert("目前條件無法拆除");
+	}
+
+
+}
+
+
+function png23(){
+
+	if(gasnumber>=1 &&totalMoney>=40000&&powerUseful>=500){
+
+        gasnumber=gasnumber-1;
+        annualIncome=annualIncome+500;
+        totalMoney=totalMoney-40000;
+        powerUseful=powerUseful-500;
+        totalPower=totalPower-500;
+        annualcarbonEmission=annualcarbonEmission-3000;
+
+        document.getElementById("gasnumber").innerHTML=gasnumber+" 座";
+        document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	    document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
+	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
+	    alert("已拆除一座燃氣發電廠");
+
+
+	}else{
+		alert("目前條件無法拆除");
+	}
+
+
+}
+
+function png24(){
+
+	if(nuclearnumber>=1 &&totalMoney>=200000&&powerUseful>=600){
+
+        nuclearnumber=nuclearnumber-1;
+        annualIncome=annualIncome+1500;
+        totalMoney=totalMoney-200000;
+        powerUseful=powerUseful-600;
+        totalPower=totalPower-600;
+        annualcarbonEmission=annualcarbonEmission-150;
+
+        document.getElementById("nuclearnumber").innerHTML=nuclearnumber+" 座";
+        document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	    document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
+	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
+	    alert("已拆除一座核能發電廠");
+
+
+	}else{
+		alert("目前條件無法拆除");
+	}
+
+}
+
+function png25(){
+
+	if(solarnumber>=1 &&totalMoney>=400000&&powerUseful>=300){
+
+        solarnumber=solarnumber-1;
+        annualIncome=annualIncome+50;
+        totalMoney=totalMoney-400000;
+        powerUseful=powerUseful-300;
+        totalPower=totalPower-300;
+        annualcarbonEmission=annualcarbonEmission-10;
+
+        document.getElementById("solarnumber").innerHTML=solarnumber+" 座";
+        document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	    document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
+	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
+	    alert("已拆除一座太陽能發電廠");
+
+
+	}else{
+		alert("目前條件無法拆除");
+	}
+
+}
+
+function png26(){
+
+	if(windnumber>=1 &&totalMoney>=800000&&powerUseful>=200){
+
+        windnumber=windnumber-1;
+        annualIncome=annualIncome+100;
+        totalMoney=totalMoney-800000;
+        powerUseful=powerUseful-200;
+        totalPower=totalPower-200;
+        annualcarbonEmission=annualcarbonEmission-4;
+
+        document.getElementById("windnumber").innerHTML=windnumber+" 座";
+        document.getElementById("annualIncome").innerHTML=annualIncome+" 元";
+	    document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
+	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
+	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
+	    alert("已拆除一座風力發電廠");
+
+
+	}else{
+		alert("目前條件無法拆除");
+	}
+
+}
 
 function productionNextBtn(){
 document.getElementById("production1").style.display='none';	
@@ -621,8 +839,6 @@ document.getElementById("energyPreBtn").style.display='none';
 
 
 
-
-
 function nextyear(){
 
 	totalMoney=totalMoney+annualIncome;
@@ -643,6 +859,7 @@ function production(){
 document.getElementById("production").style.display='';
 document.getElementById("energy").style.display='none';
 document.getElementById("technology").style.display='none';
+document.getElementById("energyremove").style.display='none';
 
 }
 
@@ -655,6 +872,7 @@ if (level==1) {
 document.getElementById("production").style.display='none';
 document.getElementById("energy").style.display='';
 document.getElementById("technology").style.display='none';
+document.getElementById("energyremove").style.display='none';
 }
 	
 }
@@ -664,6 +882,26 @@ function technology(){
 document.getElementById("production").style.display='none';
 document.getElementById("energy").style.display='none';
 document.getElementById("technology").style.display='';
+document.getElementById("energyremove").style.display='none';
+
+
+	
+}
+
+
+function remove(){
+
+document.getElementById("production").style.display='none';
+document.getElementById("energy").style.display='none';
+document.getElementById("technology").style.display='none';
+document.getElementById("energyremove").style.display='';
+
+document.getElementById("waternumber").innerHTML=waternumber+" 座";
+document.getElementById("coalnumber").innerHTML=coalnumber+" 座";
+document.getElementById("gasnumber").innerHTML=gasnumber+" 座";
+document.getElementById("nuclearnumber").innerHTML=nuclearnumber+" 座";
+document.getElementById("solarnumber").innerHTML=solarnumber+" 座";
+document.getElementById("windnumber").innerHTML=windnumber+" 座";
 
 
 	
