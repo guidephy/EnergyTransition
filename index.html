@@ -38,7 +38,7 @@
     	<td><input type="image"    img  src="back.png "  onClick="startgame()" style="width:30%"></td><td></td><td></td>
     </tr>
     </table>
-     <img src="story04.jpg" width="90%" align="center" >
+     <img id='howPlayImgSrc'src="story04.jpg" width="90%" align="center" >
 
     </div>
 
@@ -197,10 +197,10 @@ var annualcarbonEmission2to3=0;
 var si=1;
 
 var totalPower=0;
-var annualIncome=0;
-var annualcarbonEmission=0;
+var annualIncome=100000;
+var annualcarbonEmission=10;
 var powerUseful=0;
-var totalMoney=10;
+var totalMoney=10000000;
 var totalcarbonEmission=0;
 
 var powerreuse=0;
@@ -1145,6 +1145,20 @@ function send(){
     function howPlay(){
 
     	document.getElementById("playBoard").style.display='none';
+
+    	if(level==1){
+    	document.getElementById("howPlayImgSrc").src="story04.jpg";
+		}else if(level==2){
+		document.getElementById("howPlayImgSrc").src="story14.jpg";
+
+		}else{
+		document.getElementById("howPlayImgSrc").src="story27.jpg";
+
+		};
+
+
+    	
+
     	document.getElementById("howPlayImg").style.display='';
 
     }
