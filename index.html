@@ -4,8 +4,12 @@
 
     <script src=jquery-2.2.4.min.js></script>
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
     <title>Planet285計畫</title>
 
  </head>
@@ -181,7 +185,14 @@
 
 	<h3 align="center" style="color:black;" id='score'></h3>
 
+	<canvas id="myChart" width="60%"  ></canvas>
+
+
+
+
     </div>
+
+
 
 
 
@@ -901,11 +912,54 @@ function nextyear(){
 
 	if (annualIncome>=10000&&annualcarbonEmission<=0) {
 
+		var ctx = document.getElementById("myChart");
+
+
+var myChart = new Chart(ctx, {
+  type: 'scatter',
+  data: {
+    datasets: [
+    
+      {
+        label: '年碳排放量',
+        data: [{x: 0, y: 0}, {x: year1to2, y: annualcarbonEmission1to2}, {x: year2to3, y: annualcarbonEmission2to3}, {x: year, y: 0}],
+        showLine: true,
+        fill: false,
+        borderColor: 'rgba(200, 0, 0, 1)'
+    	}
+    ]
+  },
+  options: {
+   
+
+    tooltips: {
+
+      mode: 'index',
+      intersect: false,
+    },
+    hover: {
+      mode: 'nearest',
+      intersect: true
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero:true
+        }
+      }]
+    },
+  }
+});
+
+
+
 
 
 		alert("恭喜過關");
 		document.getElementById("playBoard").style.display='none';
 		document.getElementById("win").style.display='';
+
+
 
 		document.getElementById("score").innerHTML=username+",恭喜你在第"+year1to2+"年進行第一次的產業升級，當時的年碳排量為"+annualcarbonEmission1to2+"公斤。"+ "<br>" +"接著在第"+year2to3+"年進行第二次的產業升級，當時的年碳排量為"+annualcarbonEmission2to3+"公斤。"+ "<br>" +"最後在第"+year+"年達到淨零碳排的目標，使Planet-285行星建立永續發展的典範";
 
