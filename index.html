@@ -203,8 +203,11 @@ var year=1;
 
 var year1to2=0;
 var year2to3=0;
+var yearmax=0;
 var annualcarbonEmission1to2=0;
 var annualcarbonEmission2to3=0;
+var annualcarbonEmissionmax=0;
+
 var si=1;
 
 var totalPower=0;
@@ -922,7 +925,7 @@ var myChart = new Chart(ctx, {
     
       {
         label: '年碳排放量',
-        data: [{x: 0, y: 0}, {x: year1to2, y: annualcarbonEmission1to2}, {x: year2to3, y: annualcarbonEmission2to3}, {x: year, y: 0}],
+        data: [{x: 0, y: 0}, {x: year1to2, y: annualcarbonEmission1to2}, {x: year2to3, y: annualcarbonEmission2to3},{x: year, y: 0}],
         showLine: true,
         fill: false,
         borderColor: 'rgba(200, 0, 0, 1)'
@@ -969,6 +972,16 @@ var myChart = new Chart(ctx, {
 
 	}else{
 
+	if(annualcarbonEmission>annualcarbonEmissionmax){
+
+		annualcarbonEmissionmax=annualcarbonEmission;
+		yearmax=year;
+
+	}else{}
+
+
+
+
 	totalMoney=totalMoney+annualIncome;
 
     totalcarbonEmission=totalcarbonEmission+annualcarbonEmission;
@@ -982,6 +995,7 @@ var myChart = new Chart(ctx, {
     year=year+1;
     document.getElementById("year").innerHTML="第"+year+"年";   
     }
+    
 
 
 }
