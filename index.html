@@ -133,11 +133,12 @@
 
   		<input  type="image"  name="png15"  id="png15"  img  src="15.png"  onClick="png15()" data-inline="true"style="width:23%">
   		<input  type="image"  name="png16"  id="png16"  img  src="16.png"  onClick="png16()" data-inline="true"style="width:23%;display: none;">
+  		<input  type="image"  name="png28"  id="png28"  img  src="28.png"  onClick="png28()" data-inline="true"style="width:23%;display: none;">
+  		<input  type="image"  name="png20"  id="png20"  img  src="20.png"  onClick="png20()" data-inline="true"style="width:23%;display: none;">
   		<input  type="image"  name="png17"  id="png17"  img  src="17.png"  onClick="png17()" data-inline="true"style="width:23%;display: none;">
   		<input  type="image"  name="png18"  id="png18"  img  src="18.png"  onClick="png18()" data-inline="true"style="width:23%;display: none;">
   		<input  type="image"  name="png27"  id="png27"  img  src="27.png"  onClick="png27()" data-inline="true"style="width:23%;display: none;">
-  		<input  type="image"  name="png19"  id="png19"  img  src="19.png"  onClick="png19()" data-inline="true"style="width:23%;display: none;">
-  		<input  type="image"  name="png20"  id="png20"  img  src="20.png"  onClick="png20()" data-inline="true"style="width:23%;display: none;">
+  		
 		
 
 	</div>
@@ -202,6 +203,8 @@ var powerUseful=0;
 var totalMoney=10;
 var totalcarbonEmission=0;
 
+var powerreuse=0;
+
 var level=1;
 
 var waternumber=0;
@@ -210,6 +213,8 @@ var gasnumber=0;
 var nuclearnumber=0;
 var solarnumber=0;
 var windnumber=0;
+
+
 
 
 function png1(){
@@ -548,7 +553,7 @@ function png15(){
 
 function png16(){
 
-	if(totalMoney>=100000&&annualIncome>=10000){
+	if(totalMoney>=100000&&annualIncome>=10000&&totalPower>=1000){
 
     totalMoney=totalMoney-100000;
 
@@ -563,7 +568,7 @@ function png16(){
     document.getElementById("png16").style.display='none';
     document.getElementById("png17").style.display='';
     document.getElementById("png18").style.display='';
-    document.getElementById("png19").style.display='';
+    document.getElementById("png28").style.display='';
     document.getElementById("png20").style.display='';
 
     document.getElementById("playBoard").style.display='none';
@@ -637,14 +642,22 @@ function png18(){
 
 }
 
-function png19(){
+function png28(){
 
-	if(totalMoney>=5000000){
+	if(totalMoney>=10000){
 
-        alert("遊戲開發中，目前尚無法開發此技術");
+        totalMoney=totalMoney-10000;
+        annualcarbonEmission=annualcarbonEmission-10;
+
+        document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+
+   	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
+
+
+        alert("已進行碳封存，每年碳排放將減少10公斤");
 
 	}else{
-		alert("目前條件無法購買");
+		alert("你的錢不夠造林");
 	}
 	
 
@@ -652,12 +665,19 @@ function png19(){
 
 function png20(){
 
-	if(totalMoney>=10000000){
+	if(totalMoney>=100000){
 
-        alert("遊戲開發中，目前尚無法開發此技術");
+		totalMoney=totalMoney-10000;
+
+		document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
+		document.getElementById("png20").style.display='none';
+
+		powerreuse=1;
+
+        alert("未來可用電量將增加年總發電量的5%");
 
 	}else{
-		alert("目前條件無法購買");
+		alert("目前的錢無法夠買此技術");
 	}
 
 
@@ -899,8 +919,11 @@ function nextyear(){
 
     totalcarbonEmission=totalcarbonEmission+annualcarbonEmission;
 
+    powerUseful=powerUseful+parseInt(totalPower*0.05)*powerreuse;
+
     document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     document.getElementById("totalcarbonEmission").innerHTML=totalcarbonEmission+" 公斤";
+    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 
     year=year+1;
     document.getElementById("year").innerHTML="第"+year+"年";   
