@@ -1,6 +1,6 @@
 
 
- 	var username
+var username
 var year=1;
 
 var year1to2=0;
@@ -21,7 +21,7 @@ var totalcarbonEmission=0;
 
 var powerreuse=0;
 
-var level=1;
+var level=0;
 
 var waternumber=0;
 var coalnumber=0;
@@ -856,7 +856,9 @@ function send(){
 
 	document.getElementById("idCheck").remove();
 
-    document.getElementById("story").style.display=''
+	alert("遊戲提示:\n當你累績到一定的生產力，將可在「技術」中進行產業升級，第二次產業升級後，會出現遊戲過關條件的提示，開始來開發Planet-285吧!");
+
+    document.getElementById("playBoard").style.display=''
     document.getElementById("year").innerHTML="第"+year+"年";   
 
 
@@ -867,7 +869,7 @@ function send(){
 
     function next(){
 
-    if (level==1) {
+    if (level==0) {
       si=si+1;
      if(si==2){
        document.getElementById("storyImg").src="story02.jpg";
@@ -927,7 +929,7 @@ function send(){
       
         function back(){
 
-         if (level==1) {	
+         if (level==0) {	
       si=si-1;
      if(si==2){
        document.getElementById("storyImg").src="story02.jpg";
@@ -1001,12 +1003,18 @@ function send(){
 
     function startgame(){
 
-		document.getElementById("story").style.display='none';
-		document.getElementById("howPlayImg").style.display='none';
-		document.getElementById("playBoard").style.display='';
+		if(level==0) {
 
-		if (level==1) {
-			alert("遊戲提示:\n當你累績到一定的生產力，將可在「技術」中進行產業升級，第二次產業升級後，會出現遊戲過關條件的提示，開始來開發Planet-285吧!");
+			level=level+1;
+
+			document.getElementById("story").style.display='none';
+			document.getElementById("idCheck").style.display='';
+
+		}else{
+
+			document.getElementById("story").style.display='none';
+		    document.getElementById("howPlayImg").style.display='none';
+		    document.getElementById("playBoard").style.display='';
 
 		};
 
