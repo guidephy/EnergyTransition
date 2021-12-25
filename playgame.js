@@ -295,7 +295,7 @@ function png13(){
 	totalPower=totalPower+50;
 	annualIncome=annualIncome-50;
 	annualcarbonEmission=annualcarbonEmission+5;
-    powerUseful=powerUseful+500;
+    powerUseful=powerUseful+50;
     totalMoney=totalMoney-5000;
     solarnumber=solarnumber+1;
 
