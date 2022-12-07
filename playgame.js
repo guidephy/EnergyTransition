@@ -30,7 +30,10 @@ var nuclearnumber=0;
 var solarnumber=0;
 var windnumber=0;
 
+function cantbuy(){
 
+	document.getElementById("p2").style.display='none';
+}
 
 
 function png1(){
@@ -48,7 +51,9 @@ function png1(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     }else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -69,7 +74,9 @@ function png2(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	}else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -89,7 +96,9 @@ function png3(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	}else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -109,7 +118,9 @@ function png4(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	}else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -130,7 +141,9 @@ function png5(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	}else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -150,7 +163,9 @@ function png6(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	}else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -170,7 +185,9 @@ function png7(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	}else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -190,7 +207,9 @@ function png8(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 	}else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -213,7 +232,9 @@ function png9(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     }else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -236,7 +257,9 @@ function png10(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     }else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -259,7 +282,9 @@ function png11(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     }else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -282,7 +307,9 @@ function png12(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     }else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -305,7 +332,9 @@ function png13(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     }else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -328,7 +357,9 @@ function png14(){
 	document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     }else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantbuy.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -363,7 +394,9 @@ function png15(){
 
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     }else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantupdate.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -408,7 +441,9 @@ function png16(){
 
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
     }else{
-    	alert("目前條件無法購買");
+    	//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="cantupdate.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 	
@@ -426,7 +461,9 @@ function png17(){
        document.getElementById("png17").style.display='none';
         document.getElementById("newoption").style.display='';
         document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
-        alert("拆除電廠技術研發成功，可於拆除清單中，花錢拆除發電廠");
+        //alert("拆除電廠技術研發成功，可於拆除清單中，花錢拆除發電廠");
+        document.getElementById("p2").src="removeok.png";   
+    	document.getElementById("p2").style.display='';
 
 
 
@@ -434,7 +471,9 @@ function png17(){
         
 
 	}else{
-		alert("目前條件無法購買");
+		//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="nomoney.png";   
+    	document.getElementById("p2").style.display='';
 	}
 	
 
@@ -448,13 +487,19 @@ function png18(){
 		document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 
 
-        alert("開發碳封存技術成功，未來可使用此技術減少每年的碳排放");
+        //alert("開發碳封存技術成功，未來可使用此技術減少每年的碳排放");
+
+        document.getElementById("p2").src="carboncapture.png";   
+    	document.getElementById("p2").style.display='';
+
         document.getElementById("png18").style.display='none';
         document.getElementById("png27").style.display='';
 
 
 	}else{
-		alert("目前條件無法購買");
+		//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="nomoney.png";   
+    	document.getElementById("p2").style.display='';
 	}
 	
 
@@ -472,10 +517,14 @@ function png28(){
    	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
 
 
-        alert("已進行碳封存，每年碳排放將減少10公斤");
+        //alert("已進行碳封存，每年碳排放將減少10公斤");
+        document.getElementById("p2").src="tree.png";   
+    	document.getElementById("p2").style.display='';
 
 	}else{
-		alert("你的錢不夠造林");
+		//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="nomoney.png";   
+    	document.getElementById("p2").style.display='';
 	}
 	
 
@@ -492,10 +541,14 @@ function png20(){
 
 		powerreuse=1;
 
-        alert("未來可用電量將增加年總發電量的1%");
+        //alert("未來可用電量將增加年總發電量的1%");
+        document.getElementById("p2").src="e1percent.png";   
+    	document.getElementById("p2").style.display='';
 
 	}else{
-		alert("目前的錢無法夠買此技術");
+		//alert("目前條件無法購買");
+    	 document.getElementById("p2").src="nomoney.png";   
+    	document.getElementById("p2").style.display='';
 	}
 
 
@@ -518,12 +571,17 @@ function png21(){
 	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	    document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
-	    alert("已拆除一座水力發電廠");
+	    //alert("已拆除一座水力發電廠");
+	     document.getElementById("p2").src="removewater.png";   
+    	document.getElementById("p2").style.display='';
 
 
 
 	}else{
-		alert("目前條件無法拆除");
+		//alert("目前條件無法拆除");
+		document.getElementById("p2").src="cantremove.png";   
+    	document.getElementById("p2").style.display='';
+
 	}
 
 
@@ -546,11 +604,15 @@ function png22(){
 	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	    document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
-	    alert("已拆除一座燃煤發電廠");
+	    //alert("已拆除一座燃煤發電廠");
+	    document.getElementById("p2").src="removeca.png";   
+    	document.getElementById("p2").style.display='';
 
 
 	}else{
-		alert("目前條件無法拆除");
+		//alert("目前條件無法拆除");
+		document.getElementById("p2").src="cantremove.png";   
+    	document.getElementById("p2").style.display='';
 	}
 
 
@@ -574,11 +636,15 @@ function png23(){
 	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	    document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
-	    alert("已拆除一座燃氣發電廠");
+	    //alert("已拆除一座燃氣發電廠");
+	    document.getElementById("p2").src="removegas.png";   
+    	document.getElementById("p2").style.display='';
 
 
 	}else{
-		alert("目前條件無法拆除");
+		//alert("目前條件無法拆除");
+		document.getElementById("p2").src="cantremove.png";   
+    	document.getElementById("p2").style.display='';
 	}
 
 
@@ -601,11 +667,15 @@ function png24(){
 	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	    document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
-	    alert("已拆除一座核能發電廠");
+	    //alert("已拆除一座核能發電廠");
+	    document.getElementById("p2").src="removenuclear.png";   
+    	document.getElementById("p2").style.display='';
 
 
 	}else{
-		alert("目前條件無法拆除");
+		//alert("目前條件無法拆除");
+		document.getElementById("p2").src="cantremove.png";   
+    	document.getElementById("p2").style.display='';
 	}
 
 }
@@ -627,11 +697,15 @@ function png25(){
 	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	    document.getElementById("totalPower").innerHTML=totalPower+" 度";
 	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
-	    alert("已拆除一座太陽能發電廠");
+	    //alert("已拆除一座太陽能發電廠");
+	    document.getElementById("p2").src="removesolar.png";   
+    	document.getElementById("p2").style.display='';
 
 
 	}else{
-		alert("目前條件無法拆除");
+		//alert("目前條件無法拆除");
+		document.getElementById("p2").src="cantremove.png";   
+    	document.getElementById("p2").style.display='';
 	}
 
 }
@@ -653,11 +727,15 @@ function png26(){
 	    document.getElementById("powerUseful").innerHTML=powerUseful+" 度";
 	    document.getElementById("totalPower").innerHTML=powerUseful+" 度";
 	    document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
-	    alert("已拆除一座風力發電廠");
+	    //alert("已拆除一座風力發電廠");
+	    document.getElementById("p2").src="removewind.png";   
+    	document.getElementById("p2").style.display='';
 
 
 	}else{
-		alert("目前條件無法拆除");
+		//alert("目前條件無法拆除");
+		document.getElementById("p2").src="cantremove.png";   
+    	document.getElementById("p2").style.display='';
 	}
 
 }
@@ -670,13 +748,18 @@ function png27(){
    	totalMoney=totalMoney-500000;
    	annualcarbonEmission=annualcarbonEmission-5000;
 
-   	 alert("已進行碳封存，每年碳排放將減少5000公斤");
+   	 //alert("已進行碳封存，每年碳排放將減少5000公斤");
+   	 document.getElementById("p2").src="c5000.png";   
+    document.getElementById("p2").style.display='';
+
 
 	document.getElementById("totalMoney").innerHTML=totalMoney+" 元";
 
    	document.getElementById("annualcarbonEmission").innerHTML=annualcarbonEmission+"公斤";
     }else{
-    	alert("你的錢不夠開發新的碳封存");
+    	//alert("你的錢不夠開發新的碳封存");
+    	document.getElementById("p2").src="nomoney.png";   
+    	document.getElementById("p2").style.display='';
     }
 
 }
@@ -762,7 +845,10 @@ var myChart = new Chart(ctx, {
 
 
 
-		alert("恭喜過關");
+		//alert("恭喜過關");
+        document.getElementById("p2").src="pass.png";   
+    	document.getElementById("p2").style.display='';
+
 		document.getElementById("playBoard").style.display='none';
 		document.getElementById("win").style.display='';
 
@@ -809,7 +895,10 @@ document.getElementById("energyremove").style.display='none';
 function energy(){
 
 if (level==1) {
-	alert("目前技術還未成熟，需進行產業升級才能使用");
+	//alert("目前技術還未成熟，需進行產業升級才能使用");
+
+	 document.getElementById("p2").src="needupdate.png";   
+     document.getElementById("p2").style.display='';
 }else{
 
 document.getElementById("production").style.display='none';
