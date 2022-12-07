@@ -856,7 +856,7 @@ function send(){
 
 	document.getElementById("idCheck").remove();
 
-	alert("遊戲提示:\n當你累績到一定的生產力，將可在「技術」中進行產業升級，第二次產業升級後，會出現遊戲過關條件的提示，開始來開發Planet-285吧!");
+	//alert("遊戲提示:\n當你累績到一定的生產力，將可在「技術」中進行產業升級，第二次產業升級後，會出現遊戲過關條件的提示，開始來開發Planet-285吧!");
 
     document.getElementById("playBoard").style.display=''
     document.getElementById("year").innerHTML="第"+year+"年";   
