@@ -854,7 +854,7 @@ var myChart = new Chart(ctx, {
 
 
 
-		document.getElementById("score").innerHTML=username+",恭喜你在第"+year1to2+"年進行第一次的產業升級，當時的年碳排量為"+annualcarbonEmission1to2+"公斤。"+ "<br>" +"接著在第"+year2to3+"年進行第二次的產業升級，當時的年碳排量為"+annualcarbonEmission2to3+"公斤。"+ "<br>" +"最後在第"+year+"年達到淨零碳排的目標，使Planet-285行星建立永續發展的典範";
+		document.getElementById("score").innerHTML=username+",恭喜你在第"+year1to2+"年進行第一次的產業升級，當時的年碳排量為"+annualcarbonEmission1to2+"公斤。"+ "<br>" +"接著在第"+year2to3+"年進行第二次的產業升級，當時的年碳排量為"+annualcarbonEmission2to3+"公斤。"+ "<br>" +"最後在第"+year+"年達到淨零碳排的目標，使Planet-713行星建立永續發展的典範";
 
 
 
