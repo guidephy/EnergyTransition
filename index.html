@@ -1,229 +1,185 @@
 <!doctype html>
 <html>
 <head>
-
-    <script src=jquery-2.2.4.min.js></script>
+    <script src="jquery-2.2.4.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-
     <title>Planet713計畫</title>
 
     <style type="text/css">
-#p1{
-    position:fixed;
-    top:100px;
-    left:10px;
-    
-    background-color:#00dc03;
-    z-index:1;
-}
-#p2{
-    position:fixed;
-    top:20%;
-    left:20%;
+        #p1{
+            position:fixed;
+            top:10vh;
+            left:1vw;
+            background-color:#00dc03;
+            z-index:1;
+        }
+        #p2{
+            position:fixed;
+            top:20%;
+            left:20%;
+            background-color:#fdff55;
+            z-index:2;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #ECFFFF;
+        }
+        #story, #idCheck, #howPlayImg, #cantbuy, #playBoard, #win {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
 
+<body>
 
-    
-    background-color:#fdff55;
-    z-index:2;
-}
+<div id="story" align="center">
+    <img id="storyImg" src="story01.jpg" width="95%">
+    <input type="image" id="storybackBtn" img src="backBtn.png" onClick="back()" style="width:15%;visibility:hidden" data-inline="true">
+    <input type="image" id="storynextBtn" img src="nextBtn.png" onClick="next()" style="width:15%" data-inline="true">
+    <input type="image" id="startgame" img src="startBtn.png" onClick="startgame()" style=" width:15%;display: none;" data-inline="true">
+    <br><br>
+</div>
 
-</style>
+<div id="idCheck" align="center" style="display: none;">
+    <h2 align="center" style="color:blue;">Project Planet-713</h2>
+    <input id="username" placeholder="請輸入您的名字">
+    <button id="sendBtn" onclick="send()">送出</button>
+</div>
 
- </head>
-
-
- <body bgcolor="#ECFFFF">
-
-     <div id="story" align="center" >
-
-     	<img id="storyImg" src="story01.jpg" width="95%" >
-
-     	   <input type="image"   id="storybackBtn"  img  src="backBtn.png"  onClick="back()" style="width:15%;visibility:hidden" data-inline="true">
-     	   <input type="image"   id="storynextBtn"  img  src="nextBtn.png"  onClick="next()" style="width:15%" data-inline="true">
-     	   <input type="image"   id="startgame"  img  src="startBtn.png"  onClick="startgame()" style=" width:15%;display: none;" data-inline="true">
-     	   <br><br>
-     	   
-        
-     </div>
-
-	 <div id="idCheck" align="center" style="display: none;">
-	 <h2 align="center" style="color:blue;">Project Planet-713</h2>
-     <input   id="username" placeholder="請輸入您的名字">
-     <button id="sendBtn" onclick="send()">送出</button>
-     </div>
-
-
-
-    <div id="howPlayImg" align="center" style="display: none;">
-
-    <table  width="100%" style="table-layout:fixed">
-    <tr align="center" valign="middle" >
-    	<td><input type="image"    img  src="back.png "  onClick="startgame()" style="width:30%"></td><td></td><td></td>
-    </tr>
+<div id="howPlayImg" align="center" style="display: none;">
+    <table width="100%" style="table-layout:fixed">
+        <tr align="center" valign="middle">
+            <td><input type="image" img src="back.png" onClick="startgame()" style="width:30%"></td><td></td><td></td>
+        </tr>
     </table>
-    	<img id='howPlayImgSrc'src="story04.jpg" width="90%" align="center" >
-
-    </div>
+    <img id='howPlayImgSrc' src="story04.jpg" width="90%" align="center">
+</div>
 
 <div>
-  <div id="cantbuy">
-    <input  type="image"    id="p2"  img  src="cantbuy.png"  onClick="cantbuy()" style="width:60% ;display: none">
-
-</div>
-
-	 <div id="playBoard" align="center" style="display: none;">
-    
-
-	<table  width="100%" style="table-layout:fixed">
-    <tr align="center" valign="middle" >
-    	<td><input type="image"   id="howPlay"  img  src="howPlay.png"  onClick="howPlay()" style="width:25%"></td><td   colspan="4"> <h2 align="center" id="year" style="color:blue;"></h2></td><td><input type="image"   id="nextyear"  img  src="nextyear.png"  onClick="nextyear()" style="width:60%"></td>
-    </tr>
-
-
-	<tr align="center" valign="middle" >
-		<td  ><p>年發電量</p><p>可用電量</p></td><td  align="left"><p id="totalPower" >0 度</p><p id="powerUseful" >0 度</p></td><td ><p>年收入</p><p>財力</p></td><td align="left"><p id="annualIncome" >0 元</p><p id="totalMoney" >50 元</p></td><td  id="carbontitle"><p >每年碳排量</p><p >累積碳排量</p></td><td align="left"  id="carbonnumber"><p id="annualcarbonEmission" >0 公斤</p><p id="totalcarbonEmission" >0 公斤</p></td>
-	</tr>
-	<tr  align="center" id="oldoption" >
-    	<td   colspan="2" align="right"><input type="image"     img  src="production.png"  onClick="production()" style="width:30%"></td><td   colspan="2">	<input type="image"     img  src="energy.png"  onClick="energy()" style="width:30%"></td><td   colspan="2" align="left"><input type="image"     img  src="technology.png"  onClick="technology()" style="width:30%"></td>  
-
-    </tr>
-    <tr  align="center" id="newoption" style="display: none;">
-    	<td></td><td    ><input type="image"     img  src="production.png"  onClick="production()" style="width:60%"></td><td   >	<input type="image"     img  src="energy.png"  onClick="energy()" style="width:60%"></td><td   ><input type="image"     img  src="technology.png"  onClick="technology()" style="width:60%"></td> <td><input type="image"     img  src="remove.png"  onClick="remove()" style="width:60%"></td><td></td> 
-
-    </tr>
-
-	</table>
-
-<div id='production' >
-
-	<div id='production1'>  
-	
-
-
-  		<input  type="image"  title="點擊購買後，每年收入+2元，碳排放+1公斤" name="png1"  id="png1"  img  src="1.png"  onClick="png1()" data-inline="true"style="width:23%"  >
-  		<input  type="image"  title="點擊購買後，每年收入+4元，碳排放+2公斤" name="png2"  id="png2"  img  src="2.png"  onClick="png2()" data-inline="true"style="width:23%">
-  		<input  type="image"  title="點擊購買後，每年收入+10元，碳排放+15公斤" name="png3"  id="png3"  img  src="3.png"  onClick="png3()" data-inline="true"style="width:23%">
-  		<input  type="image"  title="點擊購買後，每年收入+15元，碳排放+10公斤" name="png4"  id="png4"  img  src="4.png"  onClick="png4()" data-inline="true"style="width:23%">
-		
-
-	</div>
-
-	<div id='production2' style="display: none;">  
-	
-
-
-  		<input  type="image"  title="點擊購買後，每年收入+180元，碳排放+350公斤" name="png5"  id="png5"  img  src="5.png"  onClick="png5()" data-inline="true"style="width:23%">
-  		<input  type="image"  title="點擊購買後，每年收入+1200元，碳排放+3000公斤" name="png6"  id="png6"  img  src="6.png"  onClick="png6()" data-inline="true"style="width:23%">
-  		<input  type="image"  title="點擊購買後，每年收入+5000元，碳排放+10000公斤" name="png7"  id="png7"  img  src="7.png"  onClick="png7()" data-inline="true"style="width:23%">
-  		<input  type="image"  title="點擊購買後，每年收入+80000元，碳排放+120000公斤" name="png8"  id="png8"  img  src="8.png"  onClick="png8()" data-inline="true"style="width:23%">
-		
-
-	</div>
-
-          <input type="image"   id="productionPreBtn"  img  src="backBtn.png"  onClick="productionPreBtn()" style="width:15%; display: none;" data-inline="true">
-     	  <input type="image"   id="productionNextBtn"  img  src="nextBtn.png"  onClick="productionNextBtn()" style="width:15% ;display: none;"data-inline="true">
-	
-	
-
-</div>
-
-<div id='energy' style="display: none;">
-
-	<div id='energy1'  >  
-	
-
-
-  		<input  type="image"  title="點擊購買後，發電量增加50度，每年收入-50元，碳排放+20公斤" name="png9"  id="png9"  img  src="9.png"  onClick="png9()" data-inline="true"style="width:23%">
-  		<input  type="image"  title="點擊購買後，發電量增加500度，每年收入-200元，碳排放+5000公斤" name="png10"  id="png10"  img  src="10.png"  onClick="png10()" data-inline="true"style="width:23%">
-  		<input  type="image"  title="點擊購買後，發電量增加500度，每年收入-500元，碳排放+3000公斤" name="png11"  id="png11"  img  src="11.png"  onClick="png11()" data-inline="true"style="width:23%">
-		
-
-	</div>
-
-	
-
-	<div id='energy2'  style="display: none;">  
-	
-
-
-  		<input  type="image"  title="點擊購買後，發電量增加600度，每年收入-1500元，碳排放+150公斤" name="png12"  id="png12"  img  src="12.png"  onClick="png12()" data-inline="true"style="width:23%">
-  		<input  type="image"  title="點擊購買後，發電量增加50度，每年收入-50元，碳排放+5公斤" name="png13"  id="png13"  img  src="13.png"  onClick="png13()" data-inline="true"style="width:23%">
-  		<input  type="image"  title="點擊購買後，發電量增加200度，每年收入-100元，碳排放+2公斤" name="png14"  id="png14"  img  src="14.png"  onClick="png14()" data-inline="true"style="width:23%">
-		
-
-	</div>
-    	<input type="image"   id="energyPreBtn"  img  src="backBtn.png"  onClick="energyPreBtn()" style="width:15%; display: none;" data-inline="true">
-    	<input type="image"   id="energyNextBtn"  img  src="nextBtn.png"  onClick="energyNextBtn()" style="width:15% ;display: none;"data-inline="true">
-
-
-</div>
-
-<div id='technology'  style="display: none;">  
-	
-	<div id='technology1'  >  
-
-  		<input  type="image"  name="png15"  id="png15"  img  src="15.png"  onClick="png15()" data-inline="true"style="width:23%">
-  		<input  type="image"  name="png16"  id="png16"  img  src="16.png"  onClick="png16()" data-inline="true"style="width:23%;display: none;">
-  		<input  type="image"  name="png28"  id="png28"  img  src="28.png"  onClick="png28()" data-inline="true"style="width:23%;display: none;">
-  		<input  type="image"  name="png17"  id="png17"  img  src="17.png"  onClick="png17()" data-inline="true"style="width:23%;display: none;">
-  		<input  type="image"  name="png18"  id="png18"  img  src="18.png"  onClick="png18()" data-inline="true"style="width:23%;display: none;">
-  		<input  type="image"  name="png27"  id="png27"  img  src="27.png"  onClick="png27()" data-inline="true"style="width:23%;display: none;">
-  		<input  type="image"  name="png20"  id="png20"  img  src="20.png"  onClick="png20()" data-inline="true"style="width:23%;display: none;">
-  		
-		
-
-	</div>
-</div>
-
-
-<div id='energyremove' style="display: none;">
-
-	
-		<table  width="100%" style="table-layout:fixed">	
-			<tr align="center" valign="middle" >
-		    <td  ><p>水力發電</p><p>核能發電</p></td><td  align="left"><p id="waternumber" >0 座</p><p id="nuclearnumber" >0 座</p></td><td ><p>燃煤發電</p><p>太陽能發電</p></td><td align="left"><p id="coalnumber" >0 座</p><p id="solarnumber" >0 座</p></td><td ><p >燃氣發電</p><p >風力發電</p></td><td align="left" ><p id="gasnumber" >0 座</p><p id="windnumber" >0 座</p></td>
-	        </tr>
-
-		</table>
- 
-	
-
-
-  		<input  type="image"  img  src="21.png"  onClick="png21()" data-inline="true"style="width:23%">
-  		<input  type="image"    img  src="22.png"  onClick="png22()" data-inline="true"style="width:23%">
-  		<input  type="image"    img  src="23.png"  onClick="png23()" data-inline="true"style="width:23%">
-        <br>
-
-  		<input  type="image"    img  src="24.png"  onClick="png24()" data-inline="true"style="width:23%">
-  		<input  type="image"    img  src="25.png"  onClick="png25()" data-inline="true"style="width:23%">
-  		<input  type="image"   img  src="26.png"  onClick="png26()" data-inline="true"style="width:23%">
-		
-
-	</div>
-
-	</div>
-
-
-     </div>
-
-    <div  align="center"  id="win" style="display: none;">
-	<h2 align="center" style="color:blue;">Project Planet-285</h2>
-	
-	<h3 align="center" style="color:black;" id='score'></h3>
-        
-	<canvas id="myChart" width="60%"  ></canvas>
-        <h4 align="center" style="color:blue;">年碳排和時間圖</h4>	
-	<a align="center" href="mailto:ttnpgjqua26@gish.tyc.edu.tw"><font color="#97CBFF"><u>遊戲製作by桃園市立觀音高中物理科林仟弘老師</font></u></a>
-
+    <div id="cantbuy">
+        <input type="image" id="p2" img src="cantbuy.png" onClick="cantbuy()" style="width:60%;display: none">
     </div>
 
-     <script src="playgame.js"></script>
+    <div id="playBoard" align="center" style="display: none;">
+        <table width="100%" style="table-layout:fixed">
+            <tr align="center" valign="middle">
+                <td><input type="image" id="howPlay" img src="howPlay.png" onClick="howPlay()" style="width:25%"></td>
+                <td colspan="4"><h2 align="center" id="year" style="color:blue;"></h2></td>
+                <td><input type="image" id="nextyear" img src="nextyear.png" onClick="nextyear()" style="width:60%"></td>
+            </tr>
+            <tr align="center" valign="middle">
+                <td><p>年發電量</p><p>可用電量</p></td>
+                <td align="left"><p id="totalPower">0 度</p><p id="powerUseful">0 度</p></td>
+                <td><p>年收入</p><p>財力</p></td>
+                <td align="left"><p id="annualIncome">0 元</p><p id="totalMoney">50 元</p></td>
+                <td id="carbontitle"><p>每年碳排量</p><p>累積碳排量</p></td>
+                <td align="left" id="carbonnumber"><p id="annualcarbonEmission">0 公斤</p><p id="totalcarbonEmission">0 公斤</p></td>
+            </tr>
+            <tr align="center" id="oldoption">
+                <td colspan="2" align="right"><input type="image" img src="production.png" onClick="production()" style="width:30%"></td>
+                <td colspan="2"><input type="image" img src="energy.png" onClick="energy()" style="width:30%"></td>
+                <td colspan="2" align="left"><input type="image" img src="technology.png" onClick="technology()" style="width:30%"></td>
+            </tr>
+            <tr align="center" id="newoption" style="display: none;">
+                <td></td>
+                <td><input type="image" img src="production.png" onClick="production()" style="width:60%"></td>
+                <td><input type="image" img src="energy.png" onClick="energy()" style="width:60%"></td>
+                <td><input type="image" img src="technology.png" onClick="technology()" style="width:60%"></td>
+                <td><input type="image" img src="remove.png" onClick="remove()" style="width:60%"></td>
+                <td></td>
+            </tr>
+        </table>
 
+        <div id='production'>
+            <div id='production1'>  
+                <input type="image" title="點擊購買後，每年收入+2元，碳排放+1公斤" name="png1" id="png1" img src="1.png" onClick="png1()" data-inline="true" style="width:23%">
+                <input type="image" title="點擊購買後，每年收入+4元，碳排放+2公斤" name="png2" id="png2" img src="2.png" onClick="png2()" data-inline="true" style="width:23%">
+                <input type="image" title="點擊購買後，每年收入+10元，碳排放+15公斤" name="png3" id="png3" img src="3.png" onClick="png3()" data-inline="true" style="width:23%">
+                <input type="image" title="點擊購買後，每年收入+15元，碳排放+10公斤" name="png4" id="png4" img src="4.png" onClick="png4()" data-inline="true" style="width:23%">
+            </div>
+            <div id='production2' style="display: none;">  
+                <input type="image" title="點擊購買後，每年收入+180元，碳排放+350公斤" name="png5" id="png5" img src="5.png" onClick="png5()" data-inline="true" style="width:23%">
+                <input type="image" title="點擊購買後，每年收入+1200元，碳排放+3000公斤" name="png6" id="png6" img src="6.png" onClick="png6()" data-inline="true" style="width:23%">
+                <input type="image" title="點擊購買後，每年收入+5000元，碳排放+10000公斤" name="png7" id="png7" img src="7.png" onClick="png7()" data-inline="true" style="width:23%">
+                <input type="image" title="點擊購買後，每年收入+80000元，碳排放+120000公斤" name="png8" id="png8" img src="8.png" onClick="png8()" data-inline="true" style="width:23%">
+            </div>
+            <input type="image" id="productionPreBtn" img src="backBtn.png" onClick="productionPreBtn()" style="width:15%; display: none;" data-inline="true">
+            <input type="image" id="productionNextBtn" img src="nextBtn.png" onClick="productionNextBtn()" style="width:15%; display: none;" data-inline="true">
+        </div>
 
- </body>
- </html>
+        <div id='energy' style="display: none;">
+            <div id='energy1'>  
+                <input type="image" title="點擊購買後，發電量增加50度，每年收入-50元，碳排放+20公斤" name="png9" id="png9" img src="9.png" onClick="png9()" data-inline="true" style="width:23%">
+                <input type="image" title="點擊購買後，發電量增加500度，每年收入-200元，碳排放+5000公斤" name="png10" id="png10" img src="10.png" onClick="png10()" data-inline="true" style="width:23%">
+                <input type="image" title="點擊購買後，發電量增加500度，每年收入-500元，碳排放+3000公斤" name="png11" id="png11" img src="11.png" onClick="png11()" data-inline="true" style="width:23%">
+            </div>
+            <div id='energy2' style="display: none;">  
+                <input type="image" title="點擊購買後，發電量增加600度，每年收入-1500元，碳排放+150公斤" name="png12" id="png12" img src="12.png" onClick="png12()" data-inline="true" style="width:23%">
+                <input type="image" title="點擊購買後，發電量增加50度，每年收入-50元，碳排放+5公斤" name="png13" id="png13" img src="13.png" onClick="png13()" data-inline="true" style="width:23%">
+                <input type="image" title="點擊購買後，發電量增加200度，每年收入-100元，碳排放+2公斤" name="png14" id="png14" img src="14.png" onClick="png14()" data-inline="true" style="width:23%">
+            </div>
+            <input type="image" id="energyPreBtn" img src="backBtn.png" onClick="energyPreBtn()" style="width:15%; display: none;" data-inline="true">
+            <input type="image" id="energyNextBtn" img src="nextBtn.png" onClick="energyNextBtn()" style="width:15%; display: none;" data-inline="true">
+        </div>
+
+        <div id='technology' style="display: none;">  
+            <div id='technology1'>  
+                <input type="image" name="png15" id="png15" img src="15.png" onClick="png15()" data-inline="true" style="width:23%">
+                <input type="image" name="png16" id="png16" img src="16.png" onClick="png16()" data-inline="true" style="width:23%;display: none;">
+                <input type="image" name="png28" id="png28" img src="28.png" onClick="png28()" data-inline="true" style="width:23%;display: none;">
+                <input type="image" name="png17" id="png17" img src="17.png" onClick="png17()" data-inline="true" style="width:23%;display: none;">
+                <input type="image" name="png18" id="png18" img src="18.png" onClick="png18()" data-inline="true" style="width:23%;display: none;">
+                <input type="image" name="png27" id="png27" img src="27.png" onClick="png27()" data-inline="true" style="width:23%;display: none;">
+                <input type="image" name="png20" id="png20" img src="20.png" onClick="png20()" data-inline="true" style="width:23%;display: none;">
+            </div>
+        </div>
+
+        <div id='energyremove' style="display: none;">
+            <table width="100%" style="table-layout:fixed">
+                <tr align="center" valign="middle">
+                    <td><p>水力發電</p><p>核能發電</p></td>
+                    <td align="left"><p id="waternumber">0 座</p><p id="nuclearnumber">0 座</p></td>
+                    <td><p>燃煤發電</p><p>太陽能發電</p></td>
+                    <td align="left"><p id="coalnumber">0 座</p><p id="solarnumber">0 座</p></td>
+                    <td><p>燃氣發電</p><p>風力發電</p></td>
+                    <td align="left"><p id="gasnumber">0 座</p><p id="windnumber">0 座</p></td>
+                </tr>
+            </table>
+            <input type="image" img src="21.png" onClick="png21()" data-inline="true" style="width:23%">
+            <input type="image" img src="22.png" onClick="png22()" data-inline="true" style="width:23%">
+            <input type="image" img src="23.png" onClick="png23()" data-inline="true" style="width:23%">
+            <br>
+            <input type="image" img src="24.png" onClick="png24()" data-inline="true" style="width:23%">
+            <input type="image" img src="25.png" onClick="png25()" data-inline="true" style="width:23%">
+            <input type="image" img src="26.png" onClick="png26()" data-inline="true" style="width:23%">
+        </div>
+    </div>
+</div>
+
+<div align="center" id="win" style="display: none;">
+    <h2 align="center" style="color:blue;">Project Planet-285</h2>
+    <h3 align="center" style="color:black;" id='score'></h3>
+    <canvas id="myChart" width="60%"></canvas>
+    <h4 align="center" style="color:blue;">年碳排和時間圖</h4>    
+    <a align="center" href="mailto:ttnpgjqua26@gish.tyc.edu.tw"><font color="#97CBFF"><u>遊戲製作by桃園市立觀音高中物理科林仟弘老師</font></u></a>
+</div>
+
+<script src="playgame.js"></script>
+</body>
+</html>
